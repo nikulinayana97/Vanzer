@@ -5,13 +5,6 @@
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: 'Avenir Next Cyr Heavy';
-  src: url("../fonts/AvenirNextCyr-Heavy.eot");
-  src: url("../fonts/AvenirNextCyr-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextCyr-Heavy.woff") format("woff"), url("../fonts/AvenirNextCyr-Heavy.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -71,17 +64,17 @@ button, .btn {
   font-family: "Avenir Next Cyr Demi", sans-serif;
   text-transform: uppercase;
   color: #fff;
+  cursor: default;
+  user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   -webkit-user-select: none; }
 
 .header {
-  padding-left: 3vw;
-  padding-right: 3.125vw;
-  position: absolute;
-  top: 2.083vw;
-  z-index: 1;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,40 +84,85 @@ button, .btn {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%; }
-  .header__logo {
-    width: 68px;
-    height: 40px; }
-  .header svg {
-    width: 68px;
-    height: 40px; }
-  .header__menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .header__menu--item {
-      margin: 0 .5em;
-      color: #fff;
-      font-family: 'Lato', Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-      text-transform: uppercase;
-      font-weight: 300;
-      opacity: .5;
-      -webkit-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s; }
-      .header__menu--item:first-of-type {
-        margin-left: 0; }
-      .header__menu--item:last-of-type {
-        margin-right: 0; }
-      .header__menu--item:hover {
-        opacity: 1;
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
-        -webkit-transition: .4s;
-        -o-transition: .4s;
-        transition: .4s; }
+  padding: 3vw 3vw;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.open-nav {
+  max-height: 400px !important;
+  background-color: #e0e0e014; }
+  .open-nav .mobile-toggle {
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg); }
+
+.sticky {
+  background-color: #7773744d;
+  opacity: 1;
+  top: 0px; }
+
+.header__logo svg {
+  width: 68px;
+  height: 40px; }
+
+.header__menu {
+  overflow: hidden; }
+  .header__menu li {
+    display: inline-block;
+    margin: 0 1rem;
+    line-height: 1; }
+    .header__menu li:first-of-type {
+      margin-left: 0; }
+    .header__menu li:last-of-type {
+      margin-right: 0; }
+  .header__menu a {
+    font-family: "Lato", sans-serif;
+    color: #9c9b9b;
+    text-transform: uppercase;
+    font-size: 1.2rem; }
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 33px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in; }
+  .mobile-toggle span {
+    width: 33px;
+    height: 5px;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    background: #b3b3b3;
+    display: block; }
+
+@media only screen and (max-width: 1024px) {
+  .header {
+    display: block;
+    max-height: 85px; }
+    .header__menu {
+      padding-top: 10px;
+      margin-bottom: 2em;
+      text-align: center;
+      width: 100%; }
+      .header__menu li {
+        margin: 0;
+        width: 100%;
+        padding: 7px 0; }
+  .mobile-toggle {
+    display: block;
+    padding-top: 3vw; } }
+
+@media only screen and (max-width: 768px) {
+  .header {
+    max-height: 70px; } }
 
 .hero {
   position: relative;
@@ -181,44 +219,16 @@ button, .btn {
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
-      content: "\f30b";
       font-family: "Font Awesome 5 Free";
+      content: "\f30b";
+      font-weight: 700;
       font-size: 0.95rem;
       color: #ff4200; }
-  .hero__scroll {
-    position: absolute;
-    bottom: 9vh;
-    left: 39.6875vw; }
-    .hero__scroll a {
-      position: relative; }
-      .hero__scroll a:before {
-        content: '';
-        position: absolute;
-        bottom: -16vh;
-        left: 14px;
-        width: 3px;
-        height: 230px;
-        background-color: #737373; }
-    .hero__scroll svg {
-      fill: #fff;
-      width: 30px; }
-    .hero__scroll--text {
-      margin-top: 60px;
-      position: relative;
-      top: -60px;
-      font-family: "Avenir Next Cyr Demi", sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #737373;
-      -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      transform: rotate(90deg); }
   .hero__social {
     position: fixed;
     z-index: 100;
     right: 3vw;
-    top: 50%;
+    bottom: 30%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -276,6 +286,36 @@ button, .btn {
     opacity: 0.05;
     letter-spacing: 0.5em;
     line-height: 1em; }
+  @media only screen and (max-width: 1024px) {
+    .hero .hero__social {
+      bottom: 0; } }
+  @media only screen and (max-width: 768px) {
+    .hero .hero__content {
+      margin-left: 50px; }
+    .hero .hero__link {
+      font-size: 1rem; }
+    .hero .hero__social {
+      position: absolute;
+      bottom: 2vh;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      .hero .hero__social--link {
+        margin: 0 12px; } }
+  @media only screen and (max-width: 576px) {
+    .hero .hero__content {
+      margin-left: 25px; }
+    .hero .hero__title {
+      font-size: 4rem; }
+    .hero .hero__text {
+      margin-bottom: 65px;
+      font-size: 1rem; } }
+  @media only screen and (max-width: 575px) {
+    .hero .hero__content {
+      margin-left: 10px; }
+    .hero .hero__title {
+      font-size: 3.5rem; } }
 
 .about {
   padding: 22.22vh 0;
@@ -655,7 +695,8 @@ button, .btn {
     .blog__slider .btn__next {
       position: absolute;
       bottom: 18vh;
-      right: 380px; }
+      right: 380px;
+      z-index: 20; }
       .blog__slider .btn__next svg {
         fill: #8e8e8e96;
         width: 30px;
