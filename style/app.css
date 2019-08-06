@@ -29,6 +29,14 @@ html {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px; }
+  @media only screen and (max-width: 1024px) {
+    .container {
+      padding: 0 10vw; } }
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 a, button {
   -webkit-transition: .3s ease-in;
@@ -127,6 +135,8 @@ button, .btn {
   display: none;
   cursor: pointer;
   font-size: 20px;
+  background-color: transparent;
+  border: none;
   position: absolute;
   right: 22px;
   top: 0;
@@ -388,7 +398,6 @@ button, .btn {
     height: 100%; }
   .about .about__text {
     margin-left: 100px;
-    margin-bottom: 35px;
     position: relative;
     -ms-flex-item-align: end;
     align-self: flex-end;
@@ -396,6 +405,7 @@ button, .btn {
     font-family: "Lato", sans-serif;
     font-size: 1rem;
     color: #999999;
+    font-weight: 300;
     line-height: 1.8em;
     letter-spacing: 0.02em; }
     .about .about__text:before {
@@ -405,6 +415,61 @@ button, .btn {
       width: 400px;
       height: 4px;
       background-color: #ededed; }
+  @media only screen and (max-width: 1024px) {
+    .about {
+      padding: 15vw 0; }
+      .about .about__title {
+        font-size: 4rem; }
+      .about .about__pictures--frame {
+        width: 35vw;
+        height: 35vw; }
+      .about .about__pictures--bottom {
+        margin-top: -30%; } }
+  @media only screen and (max-width: 991px) {
+    .about .about__title {
+      width: -webkit-min-content;
+      width: -moz-min-content;
+      width: min-content; }
+    .about .about__block {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+    .about .about__pictures {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .about .about__pictures--top {
+        margin: 0; }
+      .about .about__pictures--bottom {
+        margin-top: 15%; }
+    .about .about__text {
+      width: 100%;
+      margin-left: 0;
+      -ms-flex-item-align: initial;
+      -ms-grid-row-align: initial;
+      align-self: initial; } }
+  @media only screen and (max-width: 767px) {
+    .about .about__title {
+      top: 30%; }
+    .about .about__pictures--frame {
+      width: 38vw;
+      height: 38vw; }
+    .about .about__pictures--bottom {
+      margin-top: 20vw; }
+    .about .about__text {
+      font-size: 1.5rem; } }
+  @media only screen and (max-width: 575px) {
+    .about .about__title {
+      top: 45%;
+      font-size: 3.5rem; } }
 
 .services {
   padding: 25vh 0 18.5vh;

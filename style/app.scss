@@ -40,6 +40,14 @@ html{
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+
+    @media only screen and (max-width: 1024px){
+        padding: 0 10vw;
+    }
+}
+
+.flex-container{
+  display: flex;
 }
 
 a, button{
@@ -155,6 +163,8 @@ button, .btn{
   display: none;
   cursor: pointer;
   font-size: 20px;
+  background-color: transparent;
+  border: none;
   position: absolute;
   right: 22px;
   top: 0;
@@ -535,7 +545,6 @@ button, .btn{
 
   .about__text{
     margin-left: 100px;
-    margin-bottom: 35px;
     position: relative;
     align-self: flex-end;
     width: 50%;
@@ -543,6 +552,7 @@ button, .btn{
     font-family: $mainFf;
     font-size: 1rem;
     color: #999999;
+    font-weight: 300;
     line-height: 1.8em;
     letter-spacing: 0.02em;
 
@@ -554,6 +564,87 @@ button, .btn{
       height: 4px;
 
       background-color: #ededed;
+    }
+  }
+
+  @media only screen and (max-width: 1024px){
+      padding: 15vw 0;
+
+      .about{
+
+      &__title{
+        font-size: 4rem;
+      }
+
+      &__pictures--frame{
+        width: 35vw;
+        height: 35vw;
+      }
+
+      &__pictures--bottom{
+        margin-top: -30%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 991px){
+    .about{
+      &__title{
+        width: min-content;
+      }
+
+      &__block{
+        flex-direction: column;
+      }
+
+      &__pictures{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &--top{
+          margin: 0;
+        }
+
+        &--bottom{
+          margin-top: 15%;
+        }
+      }
+
+      &__text{
+        width: 100%;
+        margin-left: 0;
+        align-self: initial;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px){
+    .about{
+
+      &__title{
+        top: 30%;
+      }
+
+      &__pictures--frame{
+        width: 38vw;
+        height: 38vw;
+      }
+
+      &__pictures--bottom{
+        margin-top: 20vw;
+      }
+
+      &__text{
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 575px){
+    .about__title{
+      top: 45%;
+      font-size: 3.5rem;
     }
   }
 }
