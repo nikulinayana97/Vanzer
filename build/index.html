@@ -17,7 +17,6 @@
 	<!-- header -->
 
 	<header class="header">
-		<div class="blur"></div>
 			<a href="#home" class="header__logo">
 				<svg>
 					<use xlink:href='#logo'></use>
@@ -113,54 +112,30 @@
 		<!-- services -->
 		
 		<section class="services section-bg" id="services">
-
-<style>
-	
-.services{
-	position: relative;
-	background-image:none;
-}
-.services-wrapper{
-	position:relative;
-	z-index: 5;
-}
-.bg{
-	position: absolute;
-	display: none;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height:100%;
-}
-.bg.active{
-	display: block;
-}
-
-</style>
-			<img src="img/portfolio-bg.jpg" alt="" class='bg active' data-tab-index='0'>
-			<img src="img/industrial-1.jpeg" alt="" class='bg' data-tab-index='1'>
-			<img src="img/portfolio-bg.jpg" alt="" class='bg' data-tab-index='2'>
+			<div class="services-bg active" data-tab-index='0'></div>
+			<div class="services-bg" data-tab-index='1'></div>
+			<div class="services-bg" data-tab-index='2'></div>
 			<div class="container services-wrapper">
 				<h2 class="services__title title-style">Services</h2>
 				<span class="cover-text">services</span>
 				<div class="services__block">
 					<ul class="services__menu">
-						<li class="services__menu--item" data-tab="0"><a href="" class="services__menu--link">Industrial design</a></li>
+						<li class="services__menu--item active" data-tab="0"><a href="" class="services__menu--link">Industrial design</a></li>
 						<li class="services__menu--item" data-tab="1"><a href="" class="services__menu--link" >Web design</a></li>
-						<li class="services__menu--item active" data-tab="2"><a href="" class="services__menu--link">Photography</a></li>
+						<li class="services__menu--item" data-tab="2"><a href="" class="services__menu--link">Photography</a></li>
 					</ul>
 					<div class="services__desc">
-						<div class="services__desc--block block-industrial" data-tab-index="0">
+						<div class="services__desc--block block-industrial  active" data-tab-index="0">
 							<h3 class="services__desc--title">Industrial design</h3>
-							<p class="services__desc--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit atque, asperiores, ratione numquam repellendus porro esse dicta magnam!</p>
+							<p class="services__desc--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque dolorum numquam minus libero vitae deleniti doloribus, dolor consequatur optio possimus ex neque, atque eligendi adipisci quo incidunt repellat. Rem doloremque deleniti hic neque, nulla numquam molestias et blanditiis dicta suscipit!</p>
 						</div>
 						<div class="services__desc--block block-web" data-tab-index="1">
 							<h3 class="services__desc--title">Web design</h3>
-							<p class="services__desc--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi, eos recusandae incidunt ex, asperiores nobis quod optio, molestiae hic autem dolorem blanditiis!</p>
+							<p class="services__desc--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, sint, aliquid temporibus voluptatem, et ipsa quasi fuga molestias delectus, voluptatum alias. Expedita amet autem nisi voluptate, laudantium ex explicabo! Quasi exercitationem, veniam blanditiis fugiat similique excepturi voluptates deleniti tempora suscipit provident id voluptatibus ut accusamus a nam obcaecati temporibus laudantium accusantium vero dicta, itaque assumenda!</p>
 						</div>
-						<div class="services__desc--block block-photography active" data-tab-index="2">
+						<div class="services__desc--block block-photography" data-tab-index="2">
 							<h3 class="services__desc--title">Photography</h3>
-							<p class="services__desc--text">Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+							<p class="services__desc--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores ullam fuga fugiat est, et excepturi accusamus nulla expedita illo, incidunt pariatur qui. At saepe esse totam accusantium cum odit natus?</p>
 						</div>
 					</div>
 				</div>

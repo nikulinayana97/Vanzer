@@ -536,9 +536,9 @@ button, .btn{
       }
     }
 
-      &--bottom{
-        margin-top: 5%;
-      }
+    &--bottom{
+      margin-top: 5%;
+    }
   }
 
   .about__text{
@@ -597,7 +597,7 @@ button, .btn{
     }
 
     .about__title{
-      
+
       font-size: 4rem;
     }
   }
@@ -619,28 +619,67 @@ button, .btn{
 // services
 
 .services{
-  padding: 25vh 0 18.5vh;
+  padding: 15vh 0 18vh;
   position: relative;
   display: flex;
+  background: none;
+  min-height: 100vh;
 
-  background: linear-gradient(to bottom, rgba(51,51,51,0.8) 0%,rgba(51,51,51,0.8) 100%), 
-  url(../img/photo-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  &:before{
+    content: '';
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(51,51,51,0.8) 0%, rgba(51,51,51,0.8) 100%);
+    z-index: 1;
+  }
+
+  &-wrapper{
+    position:relative;
+    z-index: 5;
+  }
 
   &__title{
     margin-bottom: 190px;
     position: relative;
   }
 
+  &-bg{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &.active{
+      display: block;
+    }
+  }
+
+  [data-tab-index='0']{
+    background-image: url(../img/isis-franca-hsPFuudRg5I-unsplash.jpg);
+  }
+
+  [data-tab-index='1']{
+    background-image: url(../img/domenico-loia-hGV2TfOh0ns-unsplash.jpg);
+  }
+
+  [data-tab-index='2']{
+    background-image: url(../img/photo-bg.jpg);
+  }
+
   .cover-text{
-    top: 15%;
-    left: 20%;
+    top: -9%;
+    left: 7%;
     font-size: 17.85rem;
+    line-height: .77em;
     letter-spacing: 0.5em;
-    opacity: .17;
+    opacity: .05;
   }
   
 
@@ -678,17 +717,17 @@ button, .btn{
   }
 
   &__desc{
-    margin-right: 6%;
-    width: 34.2%;
+    width: 50%;
     align-self: flex-end;
 
     &--block{
-  display: none;
-}
+      display: none;
+    }
 
-&--block.active{
-  display: block;
-}
+    &--block.active{
+      display: block;
+      background: transparent;
+    }
 
     &--title{
       margin-bottom: 0.72em;
@@ -696,7 +735,7 @@ button, .btn{
       z-index: 1;
 
       font-family: $secBold;
-      color: #b3b3b3;
+      color: #dedcdc;
       font-size: 1.5rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -743,17 +782,87 @@ button, .btn{
       color: #999999;
       line-height: 1.8em;
       letter-spacing: 0.05em;
+      text-align: justify;
+      font-weight: 100;
+    }
+  }
+
+  @media only screen and (max-width: 768px){
+    padding: 18vh 0 5vh;
+  }
+
+  @media only screen and (max-width: 690px){
+    padding: 12vh 0 5vh;
+
+    &__block{
+      flex-direction: column;
+      justify-content: initial;
+    }
+
+    &__menu{
+      margin-bottom: 9vh;
+      justify-content: space-between;
+
+      &--item{
+        margin-bottom: 10px;
+
+        &:nth-child(2){
+          margin-left: 10%;
+          align-self: center;
+        }
+
+        &:last-of-type{
+          align-self: flex-end;
+        }
+      }
+    }
+
+    &__desc{
+      width: 100%;
+
+      &--text{
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 575px){
+    &__title{
+      margin-bottom: 140px;
+
+      &:after{
+        width: 78%;
+      }
+    }
+
+    &__menu{
+      font-size: 1.3rem;
+    }
+
+    &__desc .block-web{
+      .services__desc--title:before{
+        left: -13px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 360px){
+    &__title{
+      font-size: 2rem;
+    }
+
+    &__menu--item{
+      &:nth-child(2){
+        align-self: flex-start;
+        margin-left: 0;
+      }
+
+      &:last-of-type{
+        align-self: flex-start;
+      }
     }
   }
 }
-
-// .services__desc--block{
-//   display: none;
-// }
-
-// .services__desc--block.active{
-//   display: block;
-// }
 
 // portfolio
 

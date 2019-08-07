@@ -49,7 +49,7 @@ for (let i = 0; i<tabLinks.length; i++) {
 
         document.querySelector(".services__menu li.active").classList.remove("active");
         document.querySelector(".services__desc--block.active").classList.remove("active");
-        document.querySelector(".bg.active").classList.remove("active");
+        document.querySelector(".services-bg.active").classList.remove("active");
 
         var parentListItemIndex = el.parentElement.getAttribute('data-tab'),
             panelContentIndex = '[data-tab-index="' + parentListItemIndex + '"]';
