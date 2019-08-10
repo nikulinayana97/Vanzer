@@ -78,6 +78,16 @@ button, .btn{
     height: 4px;
     background-color: #ff4200;
   }
+
+  @media only screen and (max-width: 575px){
+    &:after{
+      width: 78%;
+    }
+  }
+
+  @media only screen and (max-width: 430px){
+    font-size: 2rem;
+  }
 }
 
 .cover-text{
@@ -154,6 +164,7 @@ button, .btn{
     color: #9c9b9b;
     text-transform: uppercase;
     font-size: 1rem;
+    font-weight: 100;
   }
 }
 
@@ -286,45 +297,6 @@ button, .btn{
     }
   }
 
-  // &__scroll{
-  //   position: absolute;
-  //   bottom: 9vh;
-  //   left: 39.6875vw;
-
-  //   a{
-  //     position: relative;
-
-  //     &:before{
-  //       content: '';
-  //       position: absolute;
-  //       bottom: -16vh;
-  //       left: 14px;
-  //       width: 3px;
-  //       height: 230px;
-
-  //       background-color: #737373;
-  //     }
-  //   }
-
-  //   svg{
-  //     fill: #fff;
-  //     width: 30px;
-  //   }
-
-  //   &--text{
-  //     margin-top: 60px;
-  //     position: relative;
-  //     top: -60px;
-
-  //     font-family: $secBold;
-  //     font-size: 1rem;
-  //     letter-spacing: 0.1em;
-  //     text-transform: uppercase;
-  //     color: #737373;
-  //     transform: rotate(90deg);
-  //   }
-  // }
-
   &__social{
     position: fixed;
     z-index: 100;
@@ -399,57 +371,41 @@ button, .btn{
   }
 
   @media only screen and (max-width: 768px){
-    .hero{
+    &__content{
+      margin-left: 50px;
+    }
 
-      &__content{
-        margin-left: 50px;
-      }
+    &__link{
+      font-size: 1rem;
+    }
 
-      &__link{
-        font-size: 1rem;
-      }
+    &__social{
+      position: absolute;
+      bottom: 2vh;
+      flex-direction: row;
 
-      &__social{
-        position: absolute;
-        bottom: 2vh;
-        flex-direction: row;
-
-        &--link{
-          margin: 0 12px;
-        }
+      &--link{
+        margin: 0 12px;
       }
     }
   }
-
   @media only screen and (max-width: 576px){
-    .hero{
-
-      &__content{
-        margin-left: 25px;
-      }
-
-      &__title{
-        font-size: 4rem;
-      }
-
-      &__text{
-        margin-bottom: 65px;
-        font-size: 1rem;
-      }
+    &__content{
+      margin-left: 25px;
     }
-  }
 
-  @media only screen and (max-width: 430px){
-    .hero{
-      &__content{
-        margin-left: 0;
-      }
-      &__title{
-        font-size: 3rem;
-      }
+    &__title{
+      font-size: 4rem;
+    }
+
+    &__text{
+      margin-bottom: 65px;
+      font-size: 1rem;
     }
   }
 }
+
+
 
 // about
 
@@ -623,7 +579,6 @@ button, .btn{
   position: relative;
   display: flex;
   background: none;
-  min-height: 100vh;
 
   &:before{
     content: '';
@@ -687,7 +642,6 @@ button, .btn{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 60%;
   }
 
   &__menu{
@@ -717,6 +671,7 @@ button, .btn{
   }
 
   &__desc{
+    margin-top: 25%;
     width: 50%;
     align-self: flex-end;
 
@@ -800,28 +755,30 @@ button, .btn{
     }
 
     &__menu{
-      margin-bottom: 9vh;
-      justify-content: space-between;
+      margin-bottom: 5vh;
+      display: block;
 
       &--item{
         margin-bottom: 10px;
 
         &:nth-child(2){
           margin-left: 10%;
-          align-self: center;
+          text-align: center;
         }
 
         &:last-of-type{
-          align-self: flex-end;
+          text-align: right;
         }
       }
     }
 
     &__desc{
+      margin-top: 0;
       width: 100%;
 
       &--text{
-        font-size: 1.6rem;
+        font-size: 1.3rem;
+        line-height: 1.2;
       }
     }
   }
@@ -829,14 +786,10 @@ button, .btn{
   @media only screen and (max-width: 575px){
     &__title{
       margin-bottom: 140px;
-
-      &:after{
-        width: 78%;
-      }
     }
 
     &__menu{
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
 
     &__desc .block-web{
@@ -844,21 +797,26 @@ button, .btn{
         left: -13px;
       }
     }
+
+    &__desc--title{
+      font-size: 1.2rem;
+    }
   }
 
   @media only screen and (max-width: 360px){
-    &__title{
-      font-size: 2rem;
-    }
 
-    &__menu--item{
-      &:nth-child(2){
-        align-self: flex-start;
-        margin-left: 0;
-      }
+    &__menu{
+      display: flex;
 
-      &:last-of-type{
-        align-self: flex-start;
+      &--item{
+        &:nth-child(2){
+          align-self: flex-start;
+          margin-left: 0;
+        }
+
+        &:last-of-type{
+          align-self: flex-start;
+        }
       }
     }
   }
@@ -867,14 +825,14 @@ button, .btn{
 // portfolio
 
 .portfolio{
-  padding: 17.31vh 0 18.15vh;
+  padding: 12vh 0 15vh;
   position: relative;
 
   background: linear-gradient(to bottom, rgba(51,51,51,0.8) 0%,rgba(51,51,51,0.8) 100%), url(../img/portfolio-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  overflow: hidden;
 
   .cover-text--top{
     top: -50px;
@@ -892,13 +850,16 @@ button, .btn{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
   }
 
   &__menu{
-    margin-top: 109px;
     display: flex;
     flex-direction: column;
-    width: 17%;
+    padding-left: 50px;
+    width: 30%;
     height: 100%;
 
     font-family: $secBold;
@@ -928,7 +889,7 @@ button, .btn{
   }
 
   &__images{
-    width: 74.36%;
+    width: 70%;
   }
 
   &__section{
@@ -940,8 +901,22 @@ button, .btn{
     .industrial__img,
     .web__img,
     .photo__img{
+      margin-right: 10px;
       width: 267px;
       height: 100%;
+
+      &:nth-child(1){
+        margin-bottom: 7%;
+        align-self: flex-end;
+      }
+
+      &:nth-child(3){
+        align-self: center;
+      }
+
+      &:last-of-type{
+        margin-right: 0;
+      }
 
       img{
         width: 100%;
@@ -949,54 +924,114 @@ button, .btn{
       }
     }
 
-    &--industrial{
-      .industrial__img:nth-child(1){
-        margin-bottom: 7%;
-        align-self: flex-end;
-      }
-
-      .industrial__img:nth-child(3){
-        align-self: center;
-      }
-    }
-
-    &--web{
-      .web__img:nth-child(1){
-        margin-top: 5%;
-      }
-
-      .web__img:nth-child(2){
-        margin-top: 20%;
-      }
-
-      .web__img:nth-child(3){
-        margin-top: 13%;
-      }
-    }
-
-    &--photography{
-      .photo__img:nth-child(1){
-        margin-top: 9%;
-      }
-
-      .photo__img:nth-child(2){
-        margin-top: 4%;
-      }
-
-      .photo__img:nth-child(3){
-        margin-top: 16%;
-      }
+    &.slick-slide{
+      display: flex;
     }
   }
 
   .cover-text--bottom{
     bottom: 8.7vh;
     left: -330px;
+    z-index: 0;
 
     font-size: 8.9rem;
     color: $main-color;
     opacity: .1;
     letter-spacing: 0.5em;
+  }
+
+  @media only screen and (max-width: 1024px){
+    padding-bottom: 10vh;
+
+    &__slider{
+      flex-direction: column-reverse;
+    }
+
+    &__menu{
+      width: 100%;
+      padding: 0;
+      margin-top: 60px;
+
+      &.slick-initialized{
+        margin-bottom: 0;
+      }
+
+      div.slick-track{
+        flex-direction: row;
+        text-align: center;
+      }
+
+      &--item{
+        width: 100%;
+        margin: 0 10px;
+      }
+
+      .slick-prev{
+        left: 0;
+        top: -50%;
+        transform: translate(0, -15%);
+        width: auto;
+        height: auto;
+
+        &:before{
+          font-family: "Font Awesome 5 Free";
+          content: "\f0d9";
+          font-weight: 700;
+          font-size: 4rem;
+          color: #d8d6d691;
+        }
+      }
+
+      .slick-next{
+        right: 0;
+        top: -50%;
+        transform: translate(0, -15%);
+        width: auto;
+        height: auto;
+
+        &:before{
+          font-family: "Font Awesome 5 Free";
+          content: "\f0da";
+          font-weight: 700;
+          font-size: 4rem;
+          color: #d8d6d691;
+        }
+      }
+    }
+
+    &__images{
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 575px){
+    &__menu{
+      .slick-prev{
+        transform: translate(0, 20%);
+
+        &:before{
+          font-size: 2rem;
+        }
+      }
+
+      .slick-next{
+        transform: translate(0, 20%);
+
+        &:before{
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 475px){
+    &__menu{
+      font-size: 0.8rem;
+
+      .slick-next, .slick-prev{
+        transform: translate(0, 0);
+      }
+    }
   }
 }
 
@@ -1004,8 +1039,7 @@ button, .btn{
 
 .blog{
   position: relative;
-  padding: 22.68vh 0 19vh;
-  height: 100vh;
+  padding: 10vh 0;
   overflow: hidden;
 
   &__title{
@@ -1076,6 +1110,8 @@ button, .btn{
       position: absolute;
       top: 33vh;
       right: 380px;
+      background-color: transparent;
+      border: none;
 
       svg{
         fill: #8e8e8e96;
@@ -1090,6 +1126,8 @@ button, .btn{
       bottom: 18vh;
       right: 380px;
       z-index: 20;
+      background-color: transparent;
+      border: none;
 
       svg{
         fill: #8e8e8e96;
@@ -1156,6 +1194,75 @@ button, .btn{
     font-size: 60rem;
     line-height: .8em;
     opacity: 0.05;
+  }
+
+  @media only screen and (max-width: 1024px){
+    padding-bottom: 0;
+
+    .cover-text--bottom{
+      display: none;
+    }
+
+    &__slider{
+      flex-direction: column;
+
+      &--big{
+        width: 100%;
+        margin-bottom: 10%;
+      }
+
+      &--small{
+        width: 100%;
+
+        div.slider__block.slick-slide.slick-cloned{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+
+        .slider__block:after{
+          content: none;
+        }
+
+        .slider__desc--title{
+          margin-bottom: 10px;
+          font-size: 1.4rem;
+          line-height: 1;
+        }
+
+        .slider__desc--link{
+          font-size: .5rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 670px){
+    &__slider{
+      &--small{
+        .slider__desc--title{
+          font-size: 1.1rem;
+        }
+        
+        .slider__desc--link{
+          font-size: .4rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 570px){
+    &__slider{
+      
+      &--small{
+        .slider__desc--title{
+          font-size: 1rem;
+        }
+        
+        .slider__desc--link{
+          font-size: .4rem;
+        }
+      }
+    }
   }
 }
 

@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
 	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 	<title>Vanzer</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
 			</button>
 
 			<nav>
-				<ul class="header__menu">
+				<ul class="header__menu" id="header__menu">
 					<li class="header__menu--item"><a href="#home" class="header__menu--link">Home</a></li>
 					<li class="header__menu--item"><a href="#about" class="header__menu--link">About Us</a></li>
 					<li class="header__menu--item"><a href="#services" class="header__menu--link">Services</a></li>
@@ -146,9 +147,6 @@
 
 		<section class="portfolio" id="portfolio">
 
-
-
-
 			<div class="container">
 				
 				<span class="cover-text cover-text--top">P</span>
@@ -160,11 +158,10 @@
 						<li class="portfolio__menu--item">Photography</li>
 					</ul>
 					<div class="portfolio__images">
-						<div class="portfolio__block block-industrial">
-							<div class="portfolio__section portfolio__section--industrial">
-								<div class="industrial__img">
+							<div class="portfolio__section">
+								<a href='img/industrial-1.jpeg' class="industrial__img" data-fancybox="images">
 									<img src="img/industrial-1.jpeg" alt="factory">
-								</div>
+								</a>
 								<div class="industrial__img">
 									<img src="img/industrial-3.jpeg" alt="industrial hall">
 								</div>
@@ -172,9 +169,7 @@
 									<img src="img/industrial-2.jpeg" alt="stairs">
 								</div>
 							</div>
-						</div>
-						<div class="portfolio__block">
-							<div class="portfolio__section portfolio__section--web">
+							<div class="portfolio__section">
 								<div class="web__img">
 									<img src="img/web-2.jpg" alt="web site design">
 								</div>
@@ -185,9 +180,7 @@
 									<img src="img/web-3.jpg" alt="personal style">
 								</div>
 							</div>
-						</div>
-						<div class="portfolio__block">
-							<div class="portfolio__section portfolio__section--photography">
+							<div class="portfolio__section">
 								<div class="photo__img">
 									<img src="img/cat.jpg" alt="cat">
 								</div>
@@ -197,7 +190,6 @@
 								<div class="photo__img">
 									<img src="img/building.jpg" alt="building">
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -266,11 +258,6 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="btn__prev">
-						<svg class="blog__slider--prev-icon">
-							<use xlink:href='#arrow'></use>
-						</svg>
-					</button>
 					<div class="blog__slider--small">
 						<div class="slider__block">
 							<h4 class="slider__desc--title">Ridiculus Fring illa Vulputate</h4>
@@ -305,11 +292,6 @@
 							</span>
 						</div>
 					</div>
-					<button type="button" class="btn__next">
-						<svg class="blog__slider--next-icon">
-							<use xlink:href='#arrow'></use>
-						</svg>
-					</button>
 				</div>
 				<span class="cover-text cover-text--bottom">b</span>
 			</div>
@@ -421,7 +403,8 @@
 		</div>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 	<script src="script/slick.min.js"></script>
 	<script src='script/app.js'></script>
 
