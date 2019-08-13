@@ -179,7 +179,7 @@ $('.blog__slider--small').slick({
 
 var map;
 
-var myLatLng = {lat: 54.597139, lng: -5.928875};
+var myLatLng = {lat: 54.597720, lng: -5.928854};
 function initMap() {
   if (window.matchMedia("(min-width: 1024px)").matches) {
     map = new google.maps.Map(document.getElementById('map'), {
