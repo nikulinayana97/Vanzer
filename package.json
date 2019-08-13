@@ -9,6 +9,7 @@
   "author": "yana",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^3.7.2",
     "gulp-cli": "^2.2.0"
   },
   "devDependencies": {
