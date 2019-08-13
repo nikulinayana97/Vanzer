@@ -80,12 +80,6 @@ button, .btn{
   }
 
   @media only screen and (max-width: 575px){
-    &:after{
-      width: 78%;
-    }
-  }
-
-  @media only screen and (max-width: 430px){
     font-size: 2.2rem;
     margin-bottom: 140px;
     letter-spacing: 0.2em;
@@ -180,7 +174,6 @@ button, .btn{
     color: #e0e0e0;
     text-transform: uppercase;
     font-size: 1rem;
-    font-weight: 100;
   }
 }
 
@@ -390,41 +383,57 @@ button, .btn{
   }
 
   @media only screen and (max-width: 768px){
-    &__content{
-      margin-left: 50px;
-    }
+    .hero{
 
-    &__link{
-      font-size: 1rem;
-    }
+      &__content{
+        margin-left: 50px;
+      }
 
-    &__social{
-      position: absolute;
-      bottom: 2vh;
-      flex-direction: row;
+      &__link{
+        font-size: 1rem;
+      }
 
-      &--link{
-        margin: 0 12px;
+      &__social{
+        position: absolute;
+        bottom: 2vh;
+        flex-direction: row;
+
+        &--link{
+          margin: 0 12px;
+        }
       }
     }
   }
+
   @media only screen and (max-width: 576px){
-    &__content{
-      margin-left: 25px;
-    }
+    .hero{
 
-    &__title{
-      font-size: 4rem;
-    }
+      &__content{
+        margin-left: 25px;
+      }
 
-    &__text{
-      margin-bottom: 65px;
-      font-size: 1rem;
+      &__title{
+        font-size: 4rem;
+      }
+
+      &__text{
+        margin-bottom: 65px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 430px){
+    .hero{
+      &__content{
+        margin-left: 0;
+      }
+      &__title{
+        font-size: 3rem;
+      }
     }
   }
 }
-
-
 
 // about
 
@@ -598,6 +607,7 @@ button, .btn{
   position: relative;
   display: flex;
   background: none;
+  min-height: 100vh;
 
   &:before{
     content: '';
@@ -661,6 +671,7 @@ button, .btn{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 60%;
   }
 
   &__menu{
@@ -690,7 +701,6 @@ button, .btn{
   }
 
   &__desc{
-    margin-top: 25%;
     width: 50%;
     align-self: flex-end;
 
@@ -774,7 +784,6 @@ button, .btn{
     }
 
     &__menu{
-      margin-bottom: 5vh;
       margin-bottom: 9vh;
       display: block;
 
@@ -793,12 +802,9 @@ button, .btn{
     }
 
     &__desc{
-      margin-top: 0;
       width: 100%;
 
       &--text{
-        font-size: 1.3rem;
-        line-height: 1.2;
         font-size: 1.4rem;
         line-height: 1.4em;
       }
@@ -806,12 +812,8 @@ button, .btn{
   }
 
   @media only screen and (max-width: 575px){
-    &__title{
-      margin-bottom: 140px;
-    }
-
     &__menu{
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
 
     &__desc .block-web{
@@ -819,27 +821,9 @@ button, .btn{
         left: -13px;
       }
     }
-
-    &__desc--title{
-      font-size: 1.2rem;
-    }
   }
 
   @media only screen and (max-width: 360px){
-
-    &__menu{
-      display: flex;
-
-      &--item{
-        &:nth-child(2){
-          align-self: flex-start;
-          margin-left: 0;
-        }
-
-        &:last-of-type{
-          align-self: flex-start;
-        }
-
     &__menu--item{
       &:nth-child(2), &:last-of-type{
         text-align: left;
@@ -852,7 +836,6 @@ button, .btn{
 // portfolio
 
 .portfolio{
-  padding: 12vh 0 15vh;
   padding: 15vh 0 10vh;
   position: relative;
 
@@ -860,7 +843,6 @@ button, .btn{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
 
   .cover-text--top{
     top: -50px;
@@ -881,16 +863,11 @@ button, .btn{
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 1;
   }
 
   &__menu{
     display: flex;
     flex-direction: column;
-    padding-left: 50px;
-    width: 30%;
-    height: 100%;
 
     font-family: $secBold;
     color: #fff;
@@ -924,7 +901,7 @@ button, .btn{
   }
 
   &__images{
-    width: 70%;
+    width: 74.36%;
   }
 
   &__section{
@@ -936,23 +913,9 @@ button, .btn{
     .industrial__img,
     .web__img,
     .photo__img{
-      margin-right: 10px;
       width: 267px;
       height: 100%;
       margin: 0 5px;
-
-      &:nth-child(1){
-        margin-bottom: 7%;
-        align-self: flex-end;
-      }
-
-      &:nth-child(3){
-        align-self: center;
-      }
-
-      &:last-of-type{
-        margin-right: 0;
-      }
 
       img{
         width: 100%;
@@ -960,114 +923,54 @@ button, .btn{
       }
     }
 
-    &.slick-slide{
-      display: flex;
+    &--industrial{
+      .industrial__img:nth-child(1){
+        margin-bottom: 7%;
+        align-self: flex-end;
+      }
+
+      .industrial__img:nth-child(3){
+        align-self: center;
+      }
+    }
+
+    &--web{
+      .web__img:nth-child(1){
+        margin-top: 5%;
+      }
+
+      .web__img:nth-child(2){
+        margin-top: 20%;
+      }
+
+      .web__img:nth-child(3){
+        margin-top: 13%;
+      }
+    }
+
+    &--photography{
+      .photo__img:nth-child(1){
+        margin-top: 9%;
+      }
+
+      .photo__img:nth-child(2){
+        margin-top: 4%;
+      }
+
+      .photo__img:nth-child(3){
+        margin-top: 16%;
+      }
     }
   }
 
   .cover-text--bottom{
     bottom: 8.7vh;
     left: -330px;
-    z-index: 0;
 
     font-size: 8.9rem;
     color: $main-color;
     opacity: .1;
     letter-spacing: 0.5em;
-  }
-
-  @media only screen and (max-width: 1024px){
-    padding-bottom: 10vh;
-
-    &__slider{
-      flex-direction: column-reverse;
-    }
-
-    &__menu{
-      width: 100%;
-      padding: 0;
-      margin-top: 60px;
-
-      &.slick-initialized{
-        margin-bottom: 0;
-      }
-
-      div.slick-track{
-        flex-direction: row;
-        text-align: center;
-      }
-
-      &--item{
-        width: 100%;
-        margin: 0 10px;
-      }
-
-      .slick-prev{
-        left: 0;
-        top: -50%;
-        transform: translate(0, -15%);
-        width: auto;
-        height: auto;
-
-        &:before{
-          font-family: "Font Awesome 5 Free";
-          content: "\f0d9";
-          font-weight: 700;
-          font-size: 4rem;
-          color: #d8d6d691;
-        }
-      }
-
-      .slick-next{
-        right: 0;
-        top: -50%;
-        transform: translate(0, -15%);
-        width: auto;
-        height: auto;
-
-        &:before{
-          font-family: "Font Awesome 5 Free";
-          content: "\f0da";
-          font-weight: 700;
-          font-size: 4rem;
-          color: #d8d6d691;
-        }
-      }
-    }
-
-    &__images{
-      width: 100%;
-    }
-  }
-
-  @media only screen and (max-width: 575px){
-    &__menu{
-      .slick-prev{
-        transform: translate(0, 20%);
-
-        &:before{
-          font-size: 2rem;
-        }
-      }
-
-      .slick-next{
-        transform: translate(0, 20%);
-
-        &:before{
-          font-size: 2rem;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 475px){
-    &__menu{
-      font-size: 0.8rem;
-
-      .slick-next, .slick-prev{
-        transform: translate(0, 0);
-      }
-    }
   }
 
   @media only screen and (max-width: 900px){
@@ -1215,13 +1118,6 @@ button, .btn{
       }
     }
 
-    .btn__prev{
-      position: absolute;
-      top: 33vh;
-      right: 380px;
-      background-color: transparent;
-      border: none;
-
     .slick-prev, .slick-next{
       height: auto;
       width: auto;
@@ -1232,14 +1128,6 @@ button, .btn{
       top: -15%;
       transform: rotate(90deg);
     }
-
-    .btn__next{
-      position: absolute;
-      bottom: 18vh;
-      right: 380px;
-      z-index: 20;
-      background-color: transparent;
-      border: none;
 
     .slick-next{
       bottom: -15%;
@@ -1333,41 +1221,11 @@ button, .btn{
   }
 
   @media only screen and (max-width: 1024px){
-    padding-bottom: 0;
-
-    .cover-text--bottom{
-      display: none;
-    }
-
-
     &__slider{
       flex-direction: column;
 
       &--big{
         width: 100%;
-        margin-bottom: 10%;
-      }
-
-      &--small{
-        width: 100%;
-
-        div.slider__block.slick-slide.slick-cloned{
-          margin-left: 10px;
-          margin-right: 10px;
-        }
-
-        .slider__block:after{
-          content: none;
-        }
-
-        .slider__desc--title{
-          margin-bottom: 10px;
-          font-size: 1.4rem;
-          line-height: 1;
-        }
-
-        .slider__desc--link{
-          font-size: .5rem;
 
         .slider__desc--title:before{
           width: 7vw;
@@ -1430,32 +1288,6 @@ button, .btn{
       }
     }
   }
-
-  @media only screen and (max-width: 670px){
-    &__slider{
-      &--small{
-        .slider__desc--title{
-          font-size: 1.1rem;
-        }
-        
-        .slider__desc--link{
-          font-size: .4rem;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 570px){
-    &__slider{
-      
-      &--small{
-        .slider__desc--title{
-          font-size: 1rem;
-        }
-        
-        .slider__desc--link{
-          font-size: .4rem;
-        }
 
   @media only screen and (max-width: 768px){
     &__slider--big{

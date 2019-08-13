@@ -49,13 +49,11 @@ function buildHtml(cb){
 }
 
 function buildJs(cb){
-    gulp.src('app/script/app.js')
+    gulp.src('app/script/*.js')
         .pipe(gulp.dest('build/script/'))
         .pipe(browserSync.reload({stream: true}));
     cb();
 }
-
-gulp.task('buildJs', buildJs);
 
 function watchFiles(cb){
     gulp.watch('./**/*.scss', compileStyle);
