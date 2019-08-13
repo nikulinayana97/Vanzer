@@ -320,6 +320,7 @@ $('.blog__slider--small').slick({
 var map;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var myLatLng = {lat: 51.740460, lng: -1.231846};
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -473,6 +474,9 @@ function initMap() {
       "stylers": [
 =======
 var myLatLng = {lat: 54.597139, lng: -5.928875};
+=======
+var myLatLng = {lat: 54.597720, lng: -5.928854};
+>>>>>>> master
 function initMap() {
   if (window.matchMedia("(min-width: 1024px)").matches) {
     map = new google.maps.Map(document.getElementById('map'), {
