@@ -63,8 +63,9 @@ button, .btn{
 
 .title-style{
   position: relative;
-  font-family: $secBold;
+  font-family: $mainFf;
   font-size: 2.93rem;
+  font-weight: 600;
   letter-spacing: 0.4em;
   color: #fff;
   text-transform: uppercase;
@@ -135,7 +136,7 @@ button, .btn{
 
 .open-nav {
   max-height: 400px !important;
-  background-color: #e0e0e014;
+  background-color: #35353582;
   .mobile-toggle {
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -143,7 +144,7 @@ button, .btn{
 }
 
 .sticky {
-  background-color: #7773744d;
+  background-color: #35353582;
   opacity: 1;
   top: 0px;
 }
@@ -160,6 +161,7 @@ button, .btn{
     display: inline-block;
     margin: 0 1rem;
     line-height: 1;
+    transition: .3s;
 
     &:first-of-type{
       margin-left: 0;
@@ -174,6 +176,27 @@ button, .btn{
     color: #e0e0e0;
     text-transform: uppercase;
     font-size: 1rem;
+    line-height: 1.5em;
+
+    &:hover,
+    &:active{
+      color: #ad2d00;
+    }
+
+    &:after {
+      background-color: #ad2d00;
+      display: block;
+      content: "";
+      height: 1.4px;
+      width: 0%;
+      -webkit-transition: width .3s ease-in-out;
+      -moz--transition: width .3s ease-in-out;
+      transition: width .3s ease-in-out;
+    }
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
+    }
   }
 }
 
@@ -217,6 +240,17 @@ button, .btn{
         margin: 0;
         width: 100%;
         padding: 7px 0;
+
+        a{
+          color: #fff;
+          &:hover{
+            color: #e0e0e0;
+
+            &:after{
+              display: none;
+            }
+          }
+        }
       }
     }
   }
@@ -272,7 +306,7 @@ button, .btn{
     color: #b3b3b3;
     text-transform: uppercase;
     letter-spacing: 0.25em;
-    font-weight: bold;
+    font-weight: 400;
   }
 
   &__link{
@@ -508,6 +542,7 @@ button, .btn{
       img{
         width: auto;
         height: 100%;
+        transition: .5s;
       }
 
       &:before{
@@ -517,6 +552,11 @@ button, .btn{
         height: 100%;
 
         background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      &:hover img{
+        transition: .5s;
+        transform: scale(1.4);
       }
     }
 
@@ -678,7 +718,8 @@ button, .btn{
     display: flex;
     flex-direction: column;
 
-    font-family: $secBold;
+    font-family: $mainFf;
+    font-weight: 100;
     color: #fff;
     font-size: 1.5rem;
     letter-spacing: 0.1em;
@@ -696,6 +737,7 @@ button, .btn{
       &.active{
         opacity: 1;
         transition: .3s;
+        font-weight: 400;
       }
     }
   }
@@ -771,6 +813,12 @@ button, .btn{
     }
   }
 
+  @media only screen and (max-width: 1024px){
+    &-wrapper{
+    height: 100%;
+    }
+  }
+
   @media only screen and (max-width: 768px){
     padding: 18vh 0 5vh;
   }
@@ -783,9 +831,14 @@ button, .btn{
       justify-content: initial;
     }
 
+    &__title{
+      margin-bottom: 90px;
+    }
+
     &__menu{
       margin-bottom: 9vh;
       display: block;
+      font-size: 1rem;
 
       &--item{
         margin-bottom: 10px;
@@ -812,10 +865,6 @@ button, .btn{
   }
 
   @media only screen and (max-width: 575px){
-    &__menu{
-      font-size: 1.3rem;
-    }
-
     &__desc .block-web{
       .services__desc--title:before{
         left: -13px;
@@ -869,7 +918,8 @@ button, .btn{
     display: flex;
     flex-direction: column;
 
-    font-family: $secBold;
+    font-family: $mainFf;
+    font-weight: 100;
     color: #fff;
     font-size: 1.14rem;
     letter-spacing: 0.1em;
@@ -916,6 +966,10 @@ button, .btn{
       width: 267px;
       height: 100%;
       margin: 0 5px;
+
+      a:hover img{
+        transform: scale(1.2);
+      }
 
       img{
         width: 100%;
@@ -1146,6 +1200,7 @@ button, .btn{
   .slider{
 
     &__pic{
+      position: relative;
       margin-right: 70px;
       display: flex;
       justify-content: center;
@@ -1157,6 +1212,49 @@ button, .btn{
         width: auto;
         height: 100%;
       }
+
+      .hover-block{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #cacaca71;
+        opacity: 0;
+        transition: .3s;
+
+        a{
+          width: max-content;
+          height: max-content;
+          padding: 5px 15px;
+          display: block;
+          background-color: #ca3400a1;
+          font-family: "Lato",sans-serif;
+          font-size: 2rem;
+          color: #fff;
+          text-transform: uppercase;
+          border-radius: 10px;
+          font-weight: 100;
+        }
+      }
+
+      &:hover .hover-block,
+      &:active .hover-block,
+      &:focus .hover-block{
+        transition: .3s;
+        opacity: 1;
+
+        a:hover{
+          background-color: #ca3400;
+        }
+      }
+    }
+
+    &__block:nth-child(3){
+      .slider__pic{
+        width: max-content;
+      }
     }
 
     &__desc{
@@ -1164,10 +1262,11 @@ button, .btn{
 
       &--title{
         position: relative;
-        font-family: $secBold;
+        font-family: $mainFf;
         font-size: 1.93rem;
         color: #333333;
-        letter-spacing: 0.1em;
+        font-weight: 400;
+        letter-spacing: 0.03em;
         line-height: 1.4em;
         text-transform: uppercase;
       }
@@ -1225,6 +1324,7 @@ button, .btn{
       flex-direction: column;
 
       &--big{
+        margin-bottom: 60px;
         width: 100%;
 
         .slider__desc--title:before{
@@ -1241,13 +1341,6 @@ button, .btn{
           margin-top: 0;
           transform: none;
         }
-      }
-
-      &--big{
-        margin-bottom: 60px;
-      }
-
-      &--small{
 
         .slider__block{
           margin: 0 25px;
@@ -1293,6 +1386,10 @@ button, .btn{
     &__slider--big{
       .slider__pic{
         height: 350px;
+
+        .hover-block a{
+          font-size: 1.5rem;
+        }
       }
 
       .slider__desc--title{
@@ -1327,6 +1424,10 @@ button, .btn{
       .slider__pic{
         margin-right: 40px;
         height: 250px;
+
+        .hover-block a{
+          font-size: 1rem;
+        }
       }
 
       .slider__desc--title:before{
@@ -1381,6 +1482,14 @@ button, .btn{
 
   @media only screen and (max-width: 360px){
     padding: 5vh 0;
+
+    &__slider--big{
+      .slider__pic{
+        .hover-block a{
+          font-size: .5rem;
+        }
+      }
+    }
   }
 
   @media only screen and (max-width: 300px){
@@ -1470,7 +1579,8 @@ button, .btn{
     display: flex;
     flex-direction: column;
 
-    background-color: #fff;
+    background-color: rgba(255, 254, 255, .9);
+    border-radius: 10px;
 
     .top-line{
       margin-bottom: 30px;
@@ -1527,6 +1637,7 @@ button, .btn{
       background-color: $main-color;
       width: min-content;
       border: none;
+      border-radius: 3px;
       box-shadow: none;
       font-family: $mainFf;
       font-size: 1rem;
