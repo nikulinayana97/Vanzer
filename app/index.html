@@ -20,26 +20,26 @@
 	<!-- header -->
 
 	<header class="header  wow fadeIn">
-			<a href="#home" class="header__logo">
-				<img src="img/Logo.png" alt="Vanzer logo">
-			</a>
+		<a href="#home" class="header__logo">
+			<img src="img/Logo.png" alt="Vanzer logo">
+		</a>
 
-			<button class="mobile-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
+		<button class="mobile-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
 
-			<nav id='menu'>
-				<ul class="header__menu">
-					<li class="header__menu--item"><a href="#home" class="header__menu--link">Home</a></li>
-					<li class="header__menu--item"><a href="#about" class="header__menu--link">About Us</a></li>
-					<li class="header__menu--item"><a href="#services" class="header__menu--link">Services</a></li>
-					<li class="header__menu--item"><a href="#portfolio" class="header__menu--link">Portfolio</a></li>
-					<li class="header__menu--item"><a href="#blog" class="header__menu--link">Blog</a></li>
-					<li class="header__menu--item"><a href="#contact" class="header__menu--link">Contact</a></li>
-				</ul>
-			</nav>
+		<nav id='menu'>
+			<ul class="header__menu">
+				<li class="header__menu--item"><a href="#home" class="header__menu--link">Home</a></li>
+				<li class="header__menu--item"><a href="#about" class="header__menu--link">About Us</a></li>
+				<li class="header__menu--item"><a href="#services" class="header__menu--link">Services</a></li>
+				<li class="header__menu--item"><a href="#portfolio" class="header__menu--link">Portfolio</a></li>
+				<li class="header__menu--item"><a href="#blog" class="header__menu--link">Blog</a></li>
+				<li class="header__menu--item"><a href="#contact" class="header__menu--link">Contact</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<main>
@@ -54,22 +54,22 @@
 					<a href="#about" class="hero__link wow fadeIn">Read more</a>
 				</div>
 				<div class="hero__social">
-					<a href="https://www.facebook.com/profile.php?id=100001880284625" class="hero__social--link" target="_blank">
+					<a href="https://www.facebook.com/profile.php?id=100001880284625" aria-label='facebook' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-fb">
 							<use xlink:href='#facebook'></use>
 						</svg>
 					</a>
-					<a href="https://twitter.com/_nikuLina_" class="hero__social--link" target="_blank">
+					<a href="https://twitter.com/_nikuLina_" aria-label='twitter' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-tw">
 							<use xlink:href='#twitter'></use>
 						</svg>
 					</a>
-					<a href="https://dribbble.com/" class="hero__social--link" target="_blank">
+					<a href="https://dribbble.com/" aria-label='dribble' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-dr">
 							<use xlink:href='#dribble'></use>
 						</svg>
 					</a>
-					<a href="https://www.behance.net/" class="hero__social--link" target="_blank">
+					<a href="https://www.behance.net/" aria-label='behance' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-be">
 							<use xlink:href='#behance'></use>
 						</svg>
@@ -340,20 +340,25 @@
 					</div>	
 				</div>
 			</div>
-			<div class="contact__map">
-				<div id="map"></div>
-			</div>
-			<div class="contact__form">
-					<div class="top-line">
-						<input type="text" class="contact__form--input small-input" placeholder="Your Name">
-						<input type="email" class="contact__form--input small-input" placeholder="Your Email">
-					</div>
-					<input type="text" class="contact__form--input" placeholder="Your Topic">
-					<textarea class="contact__form--input" placeholder="Message"></textarea>
-					<input type="submit" value="Send Message" class="contact__form--btn">
+		</div>
+		<div class="contact__map">
+			<div id="map"></div>
+		</div>
+		<div class="modal-wrapper" id='#modal'>
+			<form id="contact" class="contact__form" name="contact" action="#" method="post">
+				<div class="top-line">
+					<input type="text" id="name" class="contact__form--input small-input" placeholder="Your Name">
+					<input type="email" id="email" class="contact__form--input small-input" placeholder="Your Email">
 				</div>
-		</section>
-
+				<input type="text" id="msg" class="contact__form--input" placeholder="Your Topic">
+				<textarea class="contact__form--input" placeholder="Message"></textarea>
+				<input type="submit" value="Send Message" id="send" class="contact__form--btn">
+			</form>
+		</div>
+		<div class="animation-btn">
+			<a class="open-btn" href="#modal">contact us</a>
+		</div>
+	</section>
 	</main>
 	<!-- footer -->
 
@@ -388,7 +393,7 @@
 					<path d="M388.432,119.12H280.659V92.35h107.782v26.77H388.432z M208.912,228.895c6.954,10.771,10.429,23.849,10.429,39.203c0,15.878-3.918,30.122-11.889,42.704c-5.071,8.326-11.367,15.359-18.932,21.021c-8.52,6.548-18.607,11.038-30.203,13.437c-11.633,2.403-24.224,3.617-37.787,3.617H0V81.247h129.25c32.579,0.53,55.676,9.969,69.315,28.506c8.184,11.369,12.239,25.011,12.239,40.868c0,16.362-4.104,29.454-12.368,39.401c-4.597,5.577-11.388,10.65-20.378,15.229C191.675,210.236,202.007,218.086,208.912,228.895z M61.722,186.76h56.632c11.638,0,21.046-2.212,28.292-6.634c7.241-4.415,10.854-12.263,10.854-23.531c0-12.449-4.784-20.712-14.375-24.689c-8.244-2.763-18.792-4.186-31.591-4.186H61.722V186.76z M162.953,264.275c0-13.902-5.682-23.513-17.023-28.67c-6.342-2.931-15.29-4.429-26.763-4.536H61.722v71.322h56.556c11.619,0,20.612-1.521,27.102-4.694C157.084,291.863,162.953,280.76,162.953,264.275z M428.419,220.736c1.302,8.756,1.891,21.46,1.652,38.065H290.493c0.77,19.266,7.421,32.739,20.035,40.449c7.607,4.835,16.83,7.196,27.63,7.196c11.388,0,20.67-2.879,27.815-8.797c3.893-3.137,7.327-7.565,10.296-13.152h51.16c-1.34,11.379-7.5,22.92-18.57,34.648c-17.151,18.641-41.205,27.988-72.097,27.988c-25.52,0-48.011-7.883-67.533-23.592C249.772,307.777,240,282.211,240,246.746c0-33.257,8.773-58.712,26.378-76.43c17.67-17.751,40.474-26.586,68.583-26.586c16.661,0,31.68,2.978,45.079,8.965c13.357,5.993,24.396,15.425,33.09,28.388C420.998,192.499,426.058,205.699,428.419,220.736z M378.062,225.73c-0.938-13.322-5.386-23.405-13.395-30.296c-7.943-6.91-17.866-10.379-29.706-10.379c-12.886,0-22.836,3.708-29.906,10.996c-7.118,7.273-11.547,17.161-13.362,29.68H378.062L378.062,225.73z"/>
 				</symbol>
 
-			<!-- contact -->
+				<!-- contact -->
 
 				<symbol version="1.1" id="email" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width='30' height='25' viewBox="0 0 31.012 31.012" style="enable-background:new 0 0 31.012 31.012;" xml:space="preserve">
 					<path d="M28.512,26.529H2.5c-1.378,0-2.5-1.121-2.5-2.5V6.982c0-1.379,1.122-2.5,2.5-2.5h26.012c1.378,0,2.5,1.121,2.5,2.5v17.047C31.012,25.408,29.89,26.529,28.512,26.529z M2.5,5.482c-0.827,0-1.5,0.673-1.5,1.5v17.047c0,0.827,0.673,1.5,1.5,1.5h26.012c0.827,0,1.5-0.673,1.5-1.5V6.982c0-0.827-0.673-1.5-1.5-1.5H2.5z"/>
@@ -406,11 +411,13 @@
 		</div>
 	</footer>
 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script src='script/fm.revealator.jquery.js'></script>
+	src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
+	<script src='script/fm.revealator.jquery.js'></script>
 	<script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script>
 	<script src="script/slick.min.js"></script>
 	<script src="script/wow.min.js"></script>
