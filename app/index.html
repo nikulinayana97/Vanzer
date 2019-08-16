@@ -345,14 +345,54 @@
 			<div id="map"></div>
 		</div>
 		<div class="modal-wrapper" id='#modal'>
-			<form id="contact" class="contact__form" name="contact" action="#" method="post">
+			<!-- <form method=post id="contact" class="contact__form" name="contact" action="#" method="post">
 				<div class="top-line">
 					<input type="text" id="name" class="contact__form--input small-input" placeholder="Your Name">
+					<div class="ba-form-control">
+						<p class="ba-form-error">This field is nessesary</p>
+					</div>
 					<input type="email" id="email" class="contact__form--input small-input" placeholder="Your Email">
+					<div class="ba-form-control">
+						<p class="ba-form-error">Unvalid email type</p>
+					</div>
 				</div>
 				<input type="text" id="msg" class="contact__form--input" placeholder="Your Topic">
+				<div class="ba-form-control">
+						<p class="ba-form-error">This field is nessesary</p>
+					</div>
 				<textarea class="contact__form--input" placeholder="Message"></textarea>
-				<input type="submit" value="Send Message" id="send" class="contact__form--btn">
+				<div class="ba-form-control">
+						<p class="ba-form-error">This</p>
+					</div>
+				<button id="send" class="contact__form--btn">Send Message</button>
+			</form> -->
+
+
+			<form action="" class="contact__form">
+				<div class="form__row">
+					<div class="form__control top-line">
+						<input type="text" class="form__input" placeholder="Your Name" id="name">
+						<span class="form--error" placeholder="">This field is required</span>
+					</div>
+					<div class="form__control top-line">
+						<input type="email" class="form__input" placeholder="Your Email" id="email">
+						<span class="form--error">Invalid email address</span>
+					</div>
+				</div>
+				<div class="form__row">
+					<div class="form__control">
+						<input type="text" class="form__input" placeholder="Your Topic">
+					</div>
+				</div>
+				<div class="form__row">
+					<div class="form__control">
+						<textarea type="text" class="form__input" placeholder="Message" id="msg"></textarea>
+						<span class="form--error">Your message should contain at least 5 symbols</span>
+					</div>
+				</div>
+				<div class="form__row">
+					<button class="form__btn" type="submit">Submit</button>
+				</div>
 			</form>
 		</div>
 		<div class="animation-btn">
