@@ -27,20 +27,18 @@ $('.header li a').click(function() {
 // Navigation Scroll
 $('nav a').click(function(event) {
   var id = $(this).attr("href");
-  var offset = 70;
-  var target = $(id).offset().top - offset;
+  var target = $(id).offset().top;
   $('html, body').animate({
     scrollTop: target
-  }, 500);
+  }, 800);
   event.preventDefault();
 });
 
-
-// Animate scroll
+// Active menu-item highlighting
 $(window).scroll(function(){
          var $sections = $('section');
   $sections.each(function(i,el){
-        var top  = $(el).offset().top-100;
+        var top  = $(el).offset().top-50;
         var bottom = top +$(el).height();
         var scroll = $(window).scrollTop();
         var id = $(el).attr('id');
@@ -51,16 +49,6 @@ $(window).scroll(function(){
         }
     })
  });
-
-$("nav").on("click","a", function (event) {
-        event.preventDefault();
- 
-        var id  = $(this).attr('href'),
- 
-            top = $(id).offset().top;
-         
-        $('body,html').animate({scrollTop: top}, 800);
-    });
 
 
 // Wow
@@ -562,6 +550,44 @@ const googleMapsScript = document.createElement('script');
 googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBmmoVDg4kbMva-Bkm-NTO_-6X6GcqIIHs&callback=initMap';
 document.head.appendChild(googleMapsScript);
 
+// Form Validation
+$('.contact__form').on('submit', function(e){
+  
+    // отменяем действие по умолчанию (делаем так что бы страница не перезагружалась)
+    e.preventDefault();
+
+    // записываем инпуты которые нужно валидировать в переменные
+    let inputEmail = $('#email'),
+        inputName = $('#name');
+        inputMessage = $('#msg')
+        
+        
+    // прячем все сообщения об ошибках
+    $('.form--error').css('display', 'none');
+
+    // создаем регулярное выражение проверки email
+    let validateEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
+    let validateMsg = /^[A-Za-zА-Яа-яЁё]{5,}$/
+    
+    // проверяем если значение инпута не является имейлом
+    if (!validateEmail.test(inputEmail.val())){
+        // делаем блок с описание ошибки под инпутом видимым
+        inputEmail.closest('.form__control').find('.form--error').css('display', 'block')
+    }
+    
+    // потом проверяем блок на пустоту, это же можем сделать просто 
+    // добавив к инпуту аттрибут required (но в этом случае мы не сможем показать свою ошибку, разве что только с помощью css)
+    if( inputName.val() === '' ){
+        // делаем блок с описание ошибки под инпутом видимым
+        inputName.closest('.form__control').find('.form--error').css('display', 'block')
+    }
+
+    if (!validateMsg.test(inputMessage.val())){
+        // делаем блок с описание ошибки под инпутом видимым
+        inputMessage.closest('.form__control').find('.form--error').css('display', 'block')
+    }
+})
+
 // Open Form
 var openModal = function() {
     $('.modal-wrapper').css('display', 'flex');
@@ -576,6 +602,7 @@ var openModal = function() {
     openModal();
   });
 
+if (window.matchMedia("(max-width: 1024px)").matches) {
   $('.modal-wrapper').on('click', function(e) {
         let modal = $(".contact__form");
         if (!modal.is(e.target)
@@ -583,5 +610,5 @@ var openModal = function() {
               closeModal();
         }
   });
-
+}
 
