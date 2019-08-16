@@ -164,6 +164,8 @@ $('.blog__slider--small').slick({
   slidesToScroll: 1,
   asNavFor: '.blog__slider--big',
   dots: false,
+  autoplay: true,
+  autoplaySpeed: 1500,
   centerMode: false,
   focusOnSelect: true,
   responsive: [
