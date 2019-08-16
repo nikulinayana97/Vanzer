@@ -20,30 +20,30 @@
 	<!-- header -->
 
 	<header class="header  wow fadeIn">
-			<a href="#home" class="header__logo">
-				<img src="img/Logo.png" alt="Vanzer logo">
-			</a>
+		<a href="#home" class="header__logo">
+			<img src="img/Logo.png" alt="Vanzer logo">
+		</a>
 
-			<button class="mobile-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
+		<button class="mobile-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
 
-			<nav id='menu'>
-				<ul class="header__menu">
-					<li class="header__menu--item"><a href="#home" class="header__menu--link">Home</a></li>
-					<li class="header__menu--item"><a href="#about" class="header__menu--link">About Us</a></li>
-					<li class="header__menu--item"><a href="#services" class="header__menu--link">Services</a></li>
-					<li class="header__menu--item"><a href="#portfolio" class="header__menu--link">Portfolio</a></li>
-					<li class="header__menu--item"><a href="#blog" class="header__menu--link">Blog</a></li>
-					<li class="header__menu--item"><a href="#contact" class="header__menu--link">Contact</a></li>
-				</ul>
-			</nav>
+		<nav id='menu'>
+			<ul class="header__menu">
+				<li class="header__menu--item"><a href="#home" class="header__menu--link">Home</a></li>
+				<li class="header__menu--item"><a href="#about" class="header__menu--link">About Us</a></li>
+				<li class="header__menu--item"><a href="#services" class="header__menu--link">Services</a></li>
+				<li class="header__menu--item"><a href="#portfolio" class="header__menu--link">Portfolio</a></li>
+				<li class="header__menu--item"><a href="#blog" class="header__menu--link">Blog</a></li>
+				<li class="header__menu--item"><a href="#contact" class="header__menu--link">Contact</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<main>
-		
+
 		<!-- hero-->
 
 		<section class="hero" id="home">
@@ -54,22 +54,22 @@
 					<a href="#about" class="hero__link wow fadeIn">Read more</a>
 				</div>
 				<div class="hero__social">
-					<a href="https://www.facebook.com/profile.php?id=100001880284625" class="hero__social--link" target="_blank">
+					<a href="https://www.facebook.com/profile.php?id=100001880284625" aria-label='facebook' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-fb">
 							<use xlink:href='#facebook'></use>
 						</svg>
 					</a>
-					<a href="https://twitter.com/_nikuLina_" class="hero__social--link" target="_blank">
+					<a href="https://twitter.com/_nikuLina_" aria-label='twitter' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-tw">
 							<use xlink:href='#twitter'></use>
 						</svg>
 					</a>
-					<a href="https://dribbble.com/" class="hero__social--link" target="_blank">
+					<a href="https://dribbble.com/" aria-label='dribble' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-dr">
 							<use xlink:href='#dribble'></use>
 						</svg>
 					</a>
-					<a href="https://www.behance.net/" class="hero__social--link" target="_blank">
+					<a href="https://www.behance.net/" aria-label='behance' class="hero__social--link" target="_blank">
 						<svg class="hero__social--icon icon-be">
 							<use xlink:href='#behance'></use>
 						</svg>
@@ -80,7 +80,7 @@
 		</section>
 
 		<!-- about us -->
-		
+
 		<section class="about" id='about'>
 			<div class="container flex-container">
 				<div class="cover-text cover-text--top">a</div>
@@ -103,7 +103,7 @@
 		</section>
 
 		<!-- services -->
-		
+
 		<section class="services section-bg" id="services">
 			<div class="services-bg active" data-tab-index='0'></div>
 			<div class="services-bg" data-tab-index='1'></div>
@@ -140,7 +140,7 @@
 		<section class="portfolio" id="portfolio">
 
 			<div class="container">
-				
+
 				<span class="cover-text cover-text--top">P</span>
 				<h2 class="portfolio__title title-style revealator-slideright revealator-delay# revealator-once">Portfolio</h2>
 				<div class="portfolio__slider">
@@ -314,7 +314,7 @@
 				<h2 class="contact__title title-style">Contact</h2>
 				<div class="contact__section">
 					<svg>
-						<use xlink:href='#email'></use>
+						<use xlink:href='#i-email'></use>
 					</svg>
 					<div class="contact__info">
 						<h5>Email</h5>
@@ -340,81 +340,106 @@
 					</div>	
 				</div>
 			</div>
-			<div class="contact__map">
-				<div id="map"></div>
-			</div>
-			<div class="contact__form">
-					<div class="top-line">
-						<input type="text" class="contact__form--input small-input" placeholder="Your Name">
-						<input type="email" class="contact__form--input small-input" placeholder="Your Email">
-					</div>
-					<input type="text" class="contact__form--input" placeholder="Your Topic">
-					<textarea class="contact__form--input" placeholder="Message"></textarea>
-					<input type="submit" value="Send Message" class="contact__form--btn">
-				</div>
-		</section>
-
-	</main>
-	<!-- footer -->
-
-	<footer class="footer">
-		<div class="container">
-			<p class="rights">Copyright © 2016,  All Right Reserved. Designed by Crophos</p>
 		</div>
+		<div class="contact__map">
+			<div id="map"></div>
+		</div>
+		<div class="modal-wrapper" id='#modal'>
+			<form action="" class="contact__form">
+				<div class="form__row">
+					<div class="form__control top-line">
+						<input type="text" class="form__input" placeholder="Your Name" id="name">
+						<span class="form--error" placeholder="">This field is required</span>
+					</div>
+					<div class="form__control top-line">
+						<input type="email" class="form__input" placeholder="Your Email" id="email">
+						<span class="form--error">Invalid email address</span>
+					</div>
+				</div>
+				<div class="form__row">
+					<div class="form__control">
+						<input type="text" class="form__input" placeholder="Your Topic">
+					</div>
+				</div>
+				<div class="form__row">
+					<div class="form__control">
+						<textarea type="text" class="form__input" placeholder="Message" id="msg"></textarea>
+						<span class="form--error">Your message should contain at least 5 symbols</span>
+					</div>
+				</div>
+				<div class="form__row">
+					<button class="form__btn" type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+		<div class="animation-btn">
+			<a class="open-btn" href="#modal">contact us</a>
+		</div>
+	</section>
+</main>
+
+
+<!-- footer -->
+
+<footer class="footer">
+	<div class="container">
+		<p class="rights">Copyright © 2016,  All Right Reserved. Designed by Crophos</p>
+	</div>
 
 
 
-		<div class="visually-hidden">
-			<svg>
-				<symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="40" viewBox="0 0 68 40">
-					<image id="logo" width="68" height="40" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAoCAYAAABHJVyTAAAEHElEQVRogdWZXagVVRTHf/dkVkiCYn5FQWRJcSEySNQkeih6uEhYQSFqZEJ0uZA9RFD2kChKGNGHRZT1YEUG0Ytg+UWIIkb1YoqC9H2zUisxU7E7sbp7Ys7898zsPedcz/EH+2H+a+11ZtbsjzX79CRJsgO4hWqWAW8F+IWyEbi7jfHawRJLyADwUkCwQ8B0UesxBjjZZckwHm4ArwJ/iEm5HrhJ1HosGdHHqs8ZS8gQ8GZgiAdFqcdAxx+9gIaTX/GbhYWixGPr1bTz83jxpAn5Dtga0HtqGxbCJ0TpIhqZW1kbeFv9ooRzKXB/F+dj9KjMxWbgJ+BKcWumD7gC+E0s1TwEXBzg9yXQ41orHAWuBa4JjPE3SZJk21NJGE/m+oW2/QHR19SM7WtWVhyQX/CzM0mSy6xDNkNT3Sip4nCNhfFm9+armAT8WuETyh5gZoDv98B1wNlGzjAIfCbuig3D2aKWs7TUOsxHbUzGtsBknAZmWTL+u/IMs3neAaVs8PQta0ckgjKzpH9Me10iF3N7Nm7Rj4Tc/Fmbc56+vtYnvZV9nn51Wr9ELmZZPn7RDy4vDNHMfE9fX9sqPZWFnn6xbbFELWadL3Z+UU2ZCPwiqrIFuEvUZiYDP4uq8/hy4JxYwpnm1r9LXLwy9gLzffZRogxjC9vHwD1iaeZOV7eU7UyPiaK832IyjONAL3BCLMo/oqT4ho1rcwsHWzPLPX2zbVB6KL2efh1pRVMm5aD77C9jsKS6ten0iajNfA7cKmqHyNched4QRbFi7g5Rh3lcFGWVKB2kaoTYm/9RVMUKqntzasjCfAyYIGoHqRohtlhuElWxFXtcTn1AvJQXROnyhBBx04ty14vFQ3lNlA4TkpDtwLeiKo9kFNv+ZohHM+8Bv4t6ASSEwFP53sy5Q8iZaddNFyISst4dRleRFnILKvx+AL4QtXV6XGVcm6JKNc+fwLsBh8x9rlIcI5ZmnhelnGdyU7KIKcCzwJoCeyVV226W0AOeKqxsHgucqvBLuQ/4UFQ/h9za9ZfXGkDolDG+AvaJGs/6iGTMjUiGVdU3tpIMIhNivCNKPKHD+Wpgh6h+TrnkFX+0BRIzZXBVZZ3T9pTdwBxRlYbb6q8Si5/bgF1eSySxI8SO9T8QNZwVgZ5bIpIxr13JoMYIwR3c7hG1mrKv4v/vB1gHPCoWPxtdhTypDf/hGEN1EmLsB24QtRzbOleWesBo+wde1GKOuD/NLir0iONY7JRJqVNlvi2Kn6Ne1c/kNibDGFs3IRsi3+SnbsqEEFIRjxQn6ibkdMQbN54TpUupmxDjRVH8fNPOXWCkaSUhVhl+LaqyWpQuppWEEHDAM+RK9RjGdzBd4+tuuyn2VWsjxT7WfLwMPB0Rz7bdA24rPf/A8X8Bxj0uW8u9yMUAAAAASUVORK5CYII="/>
-				</symbol>
+	<div class="visually-hidden">
+		<svg>
+			<symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="40" viewBox="0 0 68 40">
+				<image id="logo" width="68" height="40" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAoCAYAAABHJVyTAAAEHElEQVRogdWZXagVVRTHf/dkVkiCYn5FQWRJcSEySNQkeih6uEhYQSFqZEJ0uZA9RFD2kChKGNGHRZT1YEUG0Ytg+UWIIkb1YoqC9H2zUisxU7E7sbp7Ys7898zsPedcz/EH+2H+a+11ZtbsjzX79CRJsgO4hWqWAW8F+IWyEbi7jfHawRJLyADwUkCwQ8B0UesxBjjZZckwHm4ArwJ/iEm5HrhJ1HosGdHHqs8ZS8gQ8GZgiAdFqcdAxx+9gIaTX/GbhYWixGPr1bTz83jxpAn5Dtga0HtqGxbCJ0TpIhqZW1kbeFv9ooRzKXB/F+dj9KjMxWbgJ+BKcWumD7gC+E0s1TwEXBzg9yXQ41orHAWuBa4JjPE3SZJk21NJGE/m+oW2/QHR19SM7WtWVhyQX/CzM0mSy6xDNkNT3Sip4nCNhfFm9+armAT8WuETyh5gZoDv98B1wNlGzjAIfCbuig3D2aKWs7TUOsxHbUzGtsBknAZmWTL+u/IMs3neAaVs8PQta0ckgjKzpH9Me10iF3N7Nm7Rj4Tc/Fmbc56+vtYnvZV9nn51Wr9ELmZZPn7RDy4vDNHMfE9fX9sqPZWFnn6xbbFELWadL3Z+UU2ZCPwiqrIFuEvUZiYDP4uq8/hy4JxYwpnm1r9LXLwy9gLzffZRogxjC9vHwD1iaeZOV7eU7UyPiaK832IyjONAL3BCLMo/oqT4ho1rcwsHWzPLPX2zbVB6KL2efh1pRVMm5aD77C9jsKS6ten0iajNfA7cKmqHyNched4QRbFi7g5Rh3lcFGWVKB2kaoTYm/9RVMUKqntzasjCfAyYIGoHqRohtlhuElWxFXtcTn1AvJQXROnyhBBx04ty14vFQ3lNlA4TkpDtwLeiKo9kFNv+ZohHM+8Bv4t6ASSEwFP53sy5Q8iZaddNFyISst4dRleRFnILKvx+AL4QtXV6XGVcm6JKNc+fwLsBh8x9rlIcI5ZmnhelnGdyU7KIKcCzwJoCeyVV226W0AOeKqxsHgucqvBLuQ/4UFQ/h9za9ZfXGkDolDG+AvaJGs/6iGTMjUiGVdU3tpIMIhNivCNKPKHD+Wpgh6h+TrnkFX+0BRIzZXBVZZ3T9pTdwBxRlYbb6q8Si5/bgF1eSySxI8SO9T8QNZwVgZ5bIpIxr13JoMYIwR3c7hG1mrKv4v/vB1gHPCoWPxtdhTypDf/hGEN1EmLsB24QtRzbOleWesBo+wde1GKOuD/NLir0iONY7JRJqVNlvi2Kn6Ne1c/kNibDGFs3IRsi3+SnbsqEEFIRjxQn6ibkdMQbN54TpUupmxDjRVH8fNPOXWCkaSUhVhl+LaqyWpQuppWEEHDAM+RK9RjGdzBd4+tuuyn2VWsjxT7WfLwMPB0Rz7bdA24rPf/A8X8Bxj0uW8u9yMUAAAAASUVORK5CYII="/>
+			</symbol>
 
-				<!-- social -->
+			<!-- social -->
 
-				<symbol version="1.1" id="facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="30px" viewBox="0 0 155.139 155.139" style="enable-background:new 0 0 155.139 155.139;" xml:space="preserve">
-					<path d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452v20.341H37.29v27.585h23.814v70.761H89.584z"/>
-				</symbol>
+			<symbol version="1.1" id="facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="30px" viewBox="0 0 155.139 155.139" style="enable-background:new 0 0 155.139 155.139;" xml:space="preserve">
+				<path d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452v20.341H37.29v27.585h23.814v70.761H89.584z"/>
+			</symbol>
 
-				<symbol version="1.1" id='twitter' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="18" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-					<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568C480.224,136.96,497.728,118.496,512,97.248z"/>
-				</symbol>
+			<symbol version="1.1" id='twitter' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="18" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+				<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568C480.224,136.96,497.728,118.496,512,97.248z"/>
+			</symbol>
 
-				<symbol version="1.1" id="dribble" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="18" viewBox="0 0 438.533 438.533" style="enable-background:new 0 0 438.533 438.533;" xml:space="preserve">
-					<path d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062C438.533,179.485,428.732,142.795,409.133,109.203z M219.27,31.977c47.201,0,88.41,15.607,123.621,46.82l-3.569,4.993c-1.427,2.002-4.996,5.852-10.704,11.565c-5.709,5.708-11.943,11.136-18.699,16.274c-6.762,5.14-15.94,10.992-27.555,17.559c-11.611,6.567-23.982,12.328-37.117,17.276c-21.887-40.355-45.296-76.709-70.231-109.064C190.055,33.784,204.805,31.977,219.27,31.977z M72.524,103.06c18.271-23.026,40.537-40.73,66.806-53.1c23.601,31.405,46.82,67.381,69.662,107.921c-57.862,15.227-115.532,22.841-173.014,22.838C42.072,151.98,54.253,126.091,72.524,103.06z M44.54,286.794c-8.376-21.412-12.563-43.923-12.563-67.527c0-2.666,0.098-4.665,0.286-5.996c68.905,0,132.955-8.848,192.149-26.553c6.092,11.8,11.136,22.364,15.133,31.693c-0.771,0.38-1.999,0.806-3.713,1.283c-1.719,0.476-2.953,0.806-3.721,0.999l-10.561,3.711c-7.236,2.666-16.708,7.235-28.409,13.703c-11.704,6.478-24.123,14.182-37.257,23.13c-13.134,8.949-26.696,20.797-40.684,35.553c-13.99,14.75-25.743,30.591-35.26,47.53C64.713,327.381,52.914,308.2,44.54,286.794z M219.27,406.56c-44.54,0-84.32-14.277-119.343-42.825l4.283,3.142c6.661-14.66,16.462-28.746,29.408-42.257c12.944-13.511,25.41-24.413,37.401-32.695c11.991-8.274,25.028-16.077,39.115-23.414c14.084-7.323,23.691-11.991,28.835-13.983c5.14-1.998,9.233-3.572,12.278-4.716l0.568-0.287h0.575c18.647,48.916,31.977,96.313,39.968,142.184C268.756,401.611,244.397,406.557,219.27,406.56z M376.876,320.479c-14.086,21.796-31.696,39.834-52.817,54.104c-7.81-43.776-19.985-88.415-36.549-133.902c37.877-5.907,76.8-3.142,116.771,8.274C400.092,274.841,390.955,298.687,376.876,320.479z M403.706,216.698c-1.903-0.378-4.285-0.81-7.139-1.283c-2.854-0.473-6.331-1.047-10.424-1.713c-4.087-0.666-8.662-1.283-13.702-1.855c-5.045-0.571-10.421-1.093-16.136-1.569c-5.708-0.478-11.8-0.855-18.268-1.143c-6.479-0.284-13.042-0.428-19.705-0.428c-6.656,0-13.657,0.193-20.981,0.571c-7.326,0.375-14.414,1.049-21.265,1.999c-0.575-0.953-1.287-2.524-2.143-4.714c-0.855-2.187-1.479-3.855-1.848-4.997c-3.621-7.994-7.81-17.036-12.573-27.121c13.134-5.333,25.652-11.469,37.555-18.418c11.892-6.949,21.402-13.131,28.544-18.555c7.139-5.43,13.895-11.188,20.27-17.277c6.379-6.09,10.513-10.323,12.423-12.703c1.906-2.384,3.713-4.714,5.424-6.995l0.287-0.288c27.788,33.88,41.974,72.897,42.538,117.059L403.706,216.698z"/>
-				</symbol>
+			<symbol version="1.1" id="dribble" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="18" viewBox="0 0 438.533 438.533" style="enable-background:new 0 0 438.533 438.533;" xml:space="preserve">
+				<path d="M409.133,109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736,9.801,259.058,0,219.273,0c-39.781,0-76.47,9.801-110.063,29.407c-33.595,19.604-60.192,46.201-79.8,79.796C9.801,142.8,0,179.489,0,219.267c0,39.78,9.804,76.463,29.407,110.062c19.607,33.592,46.204,60.189,79.799,79.798c33.597,19.605,70.283,29.407,110.063,29.407s76.47-9.802,110.065-29.407c33.593-19.602,60.189-46.206,79.795-79.798c19.603-33.596,29.403-70.284,29.403-110.062C438.533,179.485,428.732,142.795,409.133,109.203z M219.27,31.977c47.201,0,88.41,15.607,123.621,46.82l-3.569,4.993c-1.427,2.002-4.996,5.852-10.704,11.565c-5.709,5.708-11.943,11.136-18.699,16.274c-6.762,5.14-15.94,10.992-27.555,17.559c-11.611,6.567-23.982,12.328-37.117,17.276c-21.887-40.355-45.296-76.709-70.231-109.064C190.055,33.784,204.805,31.977,219.27,31.977z M72.524,103.06c18.271-23.026,40.537-40.73,66.806-53.1c23.601,31.405,46.82,67.381,69.662,107.921c-57.862,15.227-115.532,22.841-173.014,22.838C42.072,151.98,54.253,126.091,72.524,103.06z M44.54,286.794c-8.376-21.412-12.563-43.923-12.563-67.527c0-2.666,0.098-4.665,0.286-5.996c68.905,0,132.955-8.848,192.149-26.553c6.092,11.8,11.136,22.364,15.133,31.693c-0.771,0.38-1.999,0.806-3.713,1.283c-1.719,0.476-2.953,0.806-3.721,0.999l-10.561,3.711c-7.236,2.666-16.708,7.235-28.409,13.703c-11.704,6.478-24.123,14.182-37.257,23.13c-13.134,8.949-26.696,20.797-40.684,35.553c-13.99,14.75-25.743,30.591-35.26,47.53C64.713,327.381,52.914,308.2,44.54,286.794z M219.27,406.56c-44.54,0-84.32-14.277-119.343-42.825l4.283,3.142c6.661-14.66,16.462-28.746,29.408-42.257c12.944-13.511,25.41-24.413,37.401-32.695c11.991-8.274,25.028-16.077,39.115-23.414c14.084-7.323,23.691-11.991,28.835-13.983c5.14-1.998,9.233-3.572,12.278-4.716l0.568-0.287h0.575c18.647,48.916,31.977,96.313,39.968,142.184C268.756,401.611,244.397,406.557,219.27,406.56z M376.876,320.479c-14.086,21.796-31.696,39.834-52.817,54.104c-7.81-43.776-19.985-88.415-36.549-133.902c37.877-5.907,76.8-3.142,116.771,8.274C400.092,274.841,390.955,298.687,376.876,320.479z M403.706,216.698c-1.903-0.378-4.285-0.81-7.139-1.283c-2.854-0.473-6.331-1.047-10.424-1.713c-4.087-0.666-8.662-1.283-13.702-1.855c-5.045-0.571-10.421-1.093-16.136-1.569c-5.708-0.478-11.8-0.855-18.268-1.143c-6.479-0.284-13.042-0.428-19.705-0.428c-6.656,0-13.657,0.193-20.981,0.571c-7.326,0.375-14.414,1.049-21.265,1.999c-0.575-0.953-1.287-2.524-2.143-4.714c-0.855-2.187-1.479-3.855-1.848-4.997c-3.621-7.994-7.81-17.036-12.573-27.121c13.134-5.333,25.652-11.469,37.555-18.418c11.892-6.949,21.402-13.131,28.544-18.555c7.139-5.43,13.895-11.188,20.27-17.277c6.379-6.09,10.513-10.323,12.423-12.703c1.906-2.384,3.713-4.714,5.424-6.995l0.287-0.288c27.788,33.88,41.974,72.897,42.538,117.059L403.706,216.698z"/>
+			</symbol>
 
-				<symbol version="1.1" id="behance" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30" height="21" viewBox="0 0 430.123 430.123" style="enable-background:new 0 0 430.123 430.123;" xml:space="preserve">
-					<path d="M388.432,119.12H280.659V92.35h107.782v26.77H388.432z M208.912,228.895c6.954,10.771,10.429,23.849,10.429,39.203c0,15.878-3.918,30.122-11.889,42.704c-5.071,8.326-11.367,15.359-18.932,21.021c-8.52,6.548-18.607,11.038-30.203,13.437c-11.633,2.403-24.224,3.617-37.787,3.617H0V81.247h129.25c32.579,0.53,55.676,9.969,69.315,28.506c8.184,11.369,12.239,25.011,12.239,40.868c0,16.362-4.104,29.454-12.368,39.401c-4.597,5.577-11.388,10.65-20.378,15.229C191.675,210.236,202.007,218.086,208.912,228.895z M61.722,186.76h56.632c11.638,0,21.046-2.212,28.292-6.634c7.241-4.415,10.854-12.263,10.854-23.531c0-12.449-4.784-20.712-14.375-24.689c-8.244-2.763-18.792-4.186-31.591-4.186H61.722V186.76z M162.953,264.275c0-13.902-5.682-23.513-17.023-28.67c-6.342-2.931-15.29-4.429-26.763-4.536H61.722v71.322h56.556c11.619,0,20.612-1.521,27.102-4.694C157.084,291.863,162.953,280.76,162.953,264.275z M428.419,220.736c1.302,8.756,1.891,21.46,1.652,38.065H290.493c0.77,19.266,7.421,32.739,20.035,40.449c7.607,4.835,16.83,7.196,27.63,7.196c11.388,0,20.67-2.879,27.815-8.797c3.893-3.137,7.327-7.565,10.296-13.152h51.16c-1.34,11.379-7.5,22.92-18.57,34.648c-17.151,18.641-41.205,27.988-72.097,27.988c-25.52,0-48.011-7.883-67.533-23.592C249.772,307.777,240,282.211,240,246.746c0-33.257,8.773-58.712,26.378-76.43c17.67-17.751,40.474-26.586,68.583-26.586c16.661,0,31.68,2.978,45.079,8.965c13.357,5.993,24.396,15.425,33.09,28.388C420.998,192.499,426.058,205.699,428.419,220.736z M378.062,225.73c-0.938-13.322-5.386-23.405-13.395-30.296c-7.943-6.91-17.866-10.379-29.706-10.379c-12.886,0-22.836,3.708-29.906,10.996c-7.118,7.273-11.547,17.161-13.362,29.68H378.062L378.062,225.73z"/>
-				</symbol>
+			<symbol version="1.1" id="behance" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30" height="21" viewBox="0 0 430.123 430.123" style="enable-background:new 0 0 430.123 430.123;" xml:space="preserve">
+				<path d="M388.432,119.12H280.659V92.35h107.782v26.77H388.432z M208.912,228.895c6.954,10.771,10.429,23.849,10.429,39.203c0,15.878-3.918,30.122-11.889,42.704c-5.071,8.326-11.367,15.359-18.932,21.021c-8.52,6.548-18.607,11.038-30.203,13.437c-11.633,2.403-24.224,3.617-37.787,3.617H0V81.247h129.25c32.579,0.53,55.676,9.969,69.315,28.506c8.184,11.369,12.239,25.011,12.239,40.868c0,16.362-4.104,29.454-12.368,39.401c-4.597,5.577-11.388,10.65-20.378,15.229C191.675,210.236,202.007,218.086,208.912,228.895z M61.722,186.76h56.632c11.638,0,21.046-2.212,28.292-6.634c7.241-4.415,10.854-12.263,10.854-23.531c0-12.449-4.784-20.712-14.375-24.689c-8.244-2.763-18.792-4.186-31.591-4.186H61.722V186.76z M162.953,264.275c0-13.902-5.682-23.513-17.023-28.67c-6.342-2.931-15.29-4.429-26.763-4.536H61.722v71.322h56.556c11.619,0,20.612-1.521,27.102-4.694C157.084,291.863,162.953,280.76,162.953,264.275z M428.419,220.736c1.302,8.756,1.891,21.46,1.652,38.065H290.493c0.77,19.266,7.421,32.739,20.035,40.449c7.607,4.835,16.83,7.196,27.63,7.196c11.388,0,20.67-2.879,27.815-8.797c3.893-3.137,7.327-7.565,10.296-13.152h51.16c-1.34,11.379-7.5,22.92-18.57,34.648c-17.151,18.641-41.205,27.988-72.097,27.988c-25.52,0-48.011-7.883-67.533-23.592C249.772,307.777,240,282.211,240,246.746c0-33.257,8.773-58.712,26.378-76.43c17.67-17.751,40.474-26.586,68.583-26.586c16.661,0,31.68,2.978,45.079,8.965c13.357,5.993,24.396,15.425,33.09,28.388C420.998,192.499,426.058,205.699,428.419,220.736z M378.062,225.73c-0.938-13.322-5.386-23.405-13.395-30.296c-7.943-6.91-17.866-10.379-29.706-10.379c-12.886,0-22.836,3.708-29.906,10.996c-7.118,7.273-11.547,17.161-13.362,29.68H378.062L378.062,225.73z"/>
+			</symbol>
 
 			<!-- contact -->
 
-				<symbol version="1.1" id="email" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width='30' height='25' viewBox="0 0 31.012 31.012" style="enable-background:new 0 0 31.012 31.012;" xml:space="preserve">
-					<path d="M28.512,26.529H2.5c-1.378,0-2.5-1.121-2.5-2.5V6.982c0-1.379,1.122-2.5,2.5-2.5h26.012c1.378,0,2.5,1.121,2.5,2.5v17.047C31.012,25.408,29.89,26.529,28.512,26.529z M2.5,5.482c-0.827,0-1.5,0.673-1.5,1.5v17.047c0,0.827,0.673,1.5,1.5,1.5h26.012c0.827,0,1.5-0.673,1.5-1.5V6.982c0-0.827-0.673-1.5-1.5-1.5H2.5z"/>
-					<path d="M15.506,18.018c-0.665,0-1.33-0.221-1.836-0.662L0.891,6.219c-0.208-0.182-0.23-0.497-0.048-0.705c0.182-0.21,0.498-0.23,0.706-0.049l12.778,11.137c0.64,0.557,1.72,0.556,2.358,0L29.46,5.466c0.207-0.183,0.522-0.162,0.706,0.049c0.182,0.208,0.16,0.523-0.048,0.705L17.342,17.355C16.836,17.797,16.171,18.018,15.506,18.018z"/>
-				</symbol>
+			<symbol version="1.1" id="i-email" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" idth='30' height='25' viewBox="0 0 31.012 31.012" style="enable-background:new 0 0 31.012 31.012;" xml:space="preserve">
+				<path d="M28.512,26.529H2.5c-1.378,0-2.5-1.121-2.5-2.5V6.982c0-1.379,1.122-2.5,2.5-2.5h26.012c1.378,0,2.5,1.121,2.5,2.5v17.047C31.012,25.408,29.89,26.529,28.512,26.529z M2.5,5.482c-0.827,0-1.5,0.673-1.5,1.5v17.047c0,0.827,0.673,1.5,1.5,1.5h26.012c0.827,0,1.5-0.673,1.5-1.5V6.982c0-0.827-0.673-1.5-1.5-1.5H2.5z"/>
+				<path d="M15.506,18.018c-0.665,0-1.33-0.221-1.836-0.662L0.891,6.219c-0.208-0.182-0.23-0.497-0.048-0.705c0.182-0.21,0.498-0.23,0.706-0.049l12.778,11.137c0.64,0.557,1.72,0.556,2.358,0L29.46,5.466c0.207-0.183,0.522-0.162,0.706,0.049c0.182,0.208,0.16,0.523-0.048,0.705L17.342,17.355C16.836,17.797,16.171,18.018,15.506,18.018z"/>
+			</symbol>
 
-				<symbol version="1.1" id="phone" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width='24' height='24'viewBox="0 0 348.077 348.077" style="enable-background:new 0 0 348.077 348.077;"xml:space="preserve">
-					<path d="M340.273,275.083l-53.755-53.761c-10.707-10.664-28.438-10.34-39.518,0.744l-27.082,27.076c-1.711-0.943-3.482-1.928-5.344-2.973c-17.102-9.476-40.509-22.464-65.14-47.113c-24.704-24.701-37.704-48.144-47.209-65.257c-1.003-1.813-1.964-3.561-2.913-5.221l18.176-18.149l8.936-8.947c11.097-11.1,11.403-28.826,0.721-39.521L73.39,8.194C62.708-2.486,44.969-2.162,33.872,8.938l-15.15,15.237l0.414,0.411c-5.08,6.482-9.325,13.958-12.484,22.02C3.74,54.28,1.927,61.603,1.098,68.941C-6,127.785,20.89,181.564,93.866,254.541c100.875,100.868,182.167,93.248,185.674,92.876c7.638-0.913,14.958-2.738,22.397-5.627c7.992-3.122,15.463-7.361,21.941-12.43l0.331,0.294l15.348-15.029C350.631,303.527,350.95,285.795,340.273,275.083z"/>
-				</symbol>
 
-				<symbol version="1.1" id="location" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="27" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;" xml:space="preserve">
-					<path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/>
-				</symbol>
-			</svg>
-		</div>
-	</footer>
+			<symbol version="1.1" id="phone" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width='24' height='24'viewBox="0 0 348.077 348.077" style="enable-background:new 0 0 348.077 348.077;"xml:space="preserve">
+				<path d="M340.273,275.083l-53.755-53.761c-10.707-10.664-28.438-10.34-39.518,0.744l-27.082,27.076c-1.711-0.943-3.482-1.928-5.344-2.973c-17.102-9.476-40.509-22.464-65.14-47.113c-24.704-24.701-37.704-48.144-47.209-65.257c-1.003-1.813-1.964-3.561-2.913-5.221l18.176-18.149l8.936-8.947c11.097-11.1,11.403-28.826,0.721-39.521L73.39,8.194C62.708-2.486,44.969-2.162,33.872,8.938l-15.15,15.237l0.414,0.411c-5.08,6.482-9.325,13.958-12.484,22.02C3.74,54.28,1.927,61.603,1.098,68.941C-6,127.785,20.89,181.564,93.866,254.541c100.875,100.868,182.167,93.248,185.674,92.876c7.638-0.913,14.958-2.738,22.397-5.627c7.992-3.122,15.463-7.361,21.941-12.43l0.331,0.294l15.348-15.029C350.631,303.527,350.95,285.795,340.273,275.083z"/>
+			</symbol>
 
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script src='script/fm.revealator.jquery.js'></script>
-	<script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script>
-	<script src="script/slick.min.js"></script>
-	<script src="script/wow.min.js"></script>
-	<script src='script/app.js'></script>
+			<symbol version="1.1" id="location" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18" height="27" viewBox="0 0 413.099 413.099" style="enable-background:new 0 0 413.099 413.099;" xml:space="preserve">
+				<path d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z"/>
+			</symbol>
+		</svg>
+	</div>
+</footer>
+
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script src='script/fm.revealator.jquery.js'></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js></script>
+<script src="script/slick.min.js"></script>
+<script src="script/wow.min.js"></script>
+<script src='script/app.js'></script>
 
 </body>
 </html>

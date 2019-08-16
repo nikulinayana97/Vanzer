@@ -27,24 +27,28 @@ $('.header li a').click(function() {
 // Navigation Scroll
 $('nav a').click(function(event) {
   var id = $(this).attr("href");
-  var offset = 70;
-  var target = $(id).offset().top - offset;
+  var target = $(id).offset().top;
   $('html, body').animate({
     scrollTop: target
-  }, 500);
+  }, 800);
   event.preventDefault();
 });
 
+// Active menu-item highlighting
+$(window).scroll(function(){
+         var $sections = $('section');
+  $sections.each(function(i,el){
+        var top  = $(el).offset().top-50;
+        var bottom = top +$(el).height();
+        var scroll = $(window).scrollTop();
+        var id = $(el).attr('id');
+      if( scroll > top && scroll < bottom){
+            $('a.active').removeClass('active');
+      $('a[href="#'+id+'"]').addClass('active');
 
-// Animate scroll
-$(document).ready(function(){
-  $("#menu").on("click","a", function (event) {
-    event.preventDefault();
-    var id  = $(this).attr('href'), 
-    top = $(id).offset().top;
-    $('body,html').animate({scrollTop: top}, 800);
-  });
-});
+        }
+    })
+ });
 
 // Wow
 $(document).ready(function(){
@@ -200,7 +204,7 @@ var map;
 
 var myLatLng = {lat: 54.597720, lng: -5.928854};
 function initMap() {
-  if (window.matchMedia("(min-width: 1024px)").matches) {
+  if (window.matchMedia("(min-width: 1025px)").matches) {
     map = new google.maps.Map(document.getElementById('map'), {
       center: myLatLng,
       zoom: 15,
@@ -541,8 +545,75 @@ function initMap() {
   });
 }
 
-
-
 const googleMapsScript = document.createElement('script');
 googleMapsScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBmmoVDg4kbMva-Bkm-NTO_-6X6GcqIIHs&callback=initMap';
 document.head.appendChild(googleMapsScript);
+
+// Form Validation
+$('.contact__form').on('submit', function(e){
+  
+    // отменяем действие по умолчанию (делаем так что бы страница не перезагружалась)
+    e.preventDefault();
+
+    // записываем инпуты которые нужно валидировать в переменные
+    let inputEmail = $('#email'),
+        inputName = $('#name');
+        inputMessage = $('#msg')
+        
+        
+    // прячем все сообщения об ошибках
+    $('.form--error').css('display', 'none');
+
+    // создаем регулярное выражение проверки email
+    let validateEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
+    let validateMsg = /^[A-Za-zА-Яа-яЁё]{5,}$/
+    
+    // проверяем если значение инпута не является имейлом
+    if (!validateEmail.test(inputEmail.val())){
+        // делаем блок с описание ошибки под инпутом видимым
+        inputEmail.closest('.form__control').find('.form--error').css('display', 'block')
+    }
+    
+    // потом проверяем блок на пустоту, это же можем сделать просто 
+    // добавив к инпуту аттрибут required (но в этом случае мы не сможем показать свою ошибку, разве что только с помощью css)
+    if( inputName.val() === '' ){
+        // делаем блок с описание ошибки под инпутом видимым
+        inputName.closest('.form__control').find('.form--error').css('display', 'block')
+    }
+
+    if (!validateMsg.test(inputMessage.val())){
+        // делаем блок с описание ошибки под инпутом видимым
+        inputMessage.closest('.form__control').find('.form--error').css('display', 'block')
+    }
+})
+
+// Open Form
+var openModal = function() {
+    $('.modal-wrapper').css('display', 'flex');
+  }
+
+  var closeModal = function() {
+    $('.modal-wrapper').css('display', 'none');
+  }
+
+  $('.open-btn').click(function(e) {
+    e.preventDefault();
+    openModal();
+
+    $('.form__btn').on('click', function(){ 
+           $.modal.close();
+      });
+  });
+
+if (window.matchMedia("(max-width: 1024px)").matches) {
+  $('.modal-wrapper').on('click', function(e) {
+        let modal = $(".contact__form");
+        if (!modal.is(e.target)
+            && modal.has(e.target).length === 0) {
+              closeModal();
+        }
+  });
+}
+
+
+
