@@ -6,7 +6,11 @@
 }
 
 html, body {
-  overflow-x: hidden;
+  overflow: initial;
+}
+
+main{
+  overflow: hidden;
 }
 
 :before, :after {
