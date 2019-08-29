@@ -45,7 +45,6 @@ $(window).scroll(function(){
       if( scroll > top && scroll < bottom){
             $('a.active').removeClass('active');
       $('a[href="#'+id+'"]').addClass('active');
-
         }
     })
  });
@@ -614,6 +613,3 @@ if (window.matchMedia("(max-width: 1024px)").matches) {
         }
   });
 }
-
-
-
